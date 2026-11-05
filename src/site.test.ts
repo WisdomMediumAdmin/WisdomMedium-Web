@@ -16,7 +16,7 @@ describe('public site configuration', () => {
       expect(app.summary.trim()).not.toBe('');
       expect(app.description.trim()).not.toBe('');
       expect(pageForPath(appPath(app)).page).not.toBe('notFound');
-      expect(pageForPath(app.privacyPolicyPath).page).toBe('privacy');
+      expect(pageForPath(new URL(app.privacyPolicyPath, site.domain).pathname).page).toBe('privacy');
     }
   });
 

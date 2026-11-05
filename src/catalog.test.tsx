@@ -15,7 +15,7 @@ describe('catalog changes', () => {
     const other: AppInfo = { ...apps[0], slug: 'another-app', name: 'Another App', summary: 'A different tool.', description: 'Not the Pebbles description.', platform: 'Web' };
     apps.unshift(other);
     const { rerender } = render(<App path="/" />);
-    expect(screen.getAllByRole('article')).toHaveLength(2);
+    expect(screen.getAllByRole('article')).toHaveLength(originalApps.length + 1);
     expect(screen.getByRole('heading', { name: 'Another App' })).toBeTruthy();
     expect(screen.getByRole('link', { name: 'Explore Another App' }).getAttribute('href')).toBe('/apps/another-app/');
     rerender(<App path="/apps/wm-pebbles/" />);
@@ -35,7 +35,7 @@ describe('catalog changes', () => {
     apps[0] = { ...apps[0], release: { status: 'available', appStoreUrl: 'https://apps.apple.com/app/id123456789' } };
     render(<App path={path} />);
     expect(screen.getByRole('link', { name: 'View on the App Store' }).getAttribute('href')).toBe('https://apps.apple.com/app/id123456789');
-    expect(screen.queryByText('Coming soon')).toBeNull();
+    expect(screen.queryAllByText('Coming soon')).toHaveLength(path === '/' ? originalApps.length - 1 : 0);
   });
 
   it('removes a store action if a release returns to coming-soon', () => {

@@ -1,0 +1,26 @@
+
+> wisdommedium-website@1.0.0 test:coverage:browser
+> vitest run --config vitest.browser.config.ts --coverage
+
+
+ RUN  v5.0.1 /private/tmp/wisdommedium-my-stories-legal
+      Coverage enabled with v8
+
+
+ Test Files  10 passed (10)
+      Tests  112 passed (112)
+   Start at  18:28:25
+   Duration  4.02s (environment 42%, tests 37%, import 10%, transform 7%, worker 5%)
+
+Environment  jsdom was created 10 times · 2.84s total, 42% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 62/62 )
+Branches     : 100% ( 25/25 )
+Functions    : 100% ( 29/29 )
+Lines        : 100% ( 49/49 )
+================================================================================

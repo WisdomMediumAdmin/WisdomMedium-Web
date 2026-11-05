@@ -43,7 +43,7 @@ describe('prerender output', () => {
     await import('./prerender');
     expect(fs.readFile).toHaveBeenCalledExactlyOnceWith(path.join(dist, 'index.html'), 'utf8');
     expect(fs.writeFile).toHaveBeenCalledTimes(pages.length + 1);
-    const headings = ['Thoughtful apps for', 'Meet ', 'How can we', 'Get in', 'Privacy ', 'That page isn’t'];
+    const headings = ['Thoughtful apps for', 'Meet ', 'Your words.', 'Terms of ', 'How can we', 'Get in', 'Privacy ', 'That page isn’t'];
     for (const [index, page] of [...pages, notFound].entries()) {
       const [destination, html] = fs.writeFile.mock.calls[index] as [string, string];
       expect(destination).toBe(outputFor(page));
@@ -56,7 +56,7 @@ describe('prerender output', () => {
       expect(html).toContain('<meta property="og:site_name" content="WisdomMedium" />');
       expect(html).toContain('<meta property="og:type" content="website" />');
       expect(html).toContain('<meta name="twitter:card" content="summary" />');
-      expect(html).toContain('<main id="main">');
+      expect(html).toContain('<main id="main" tabindex="-1">');
       expect(html).toContain(headings[index]);
       expect(html).not.toContain('<div id="root"></div>');
       expect(html).toContain('<script type="module" src="/assets/site.js"></script>');
@@ -124,7 +124,7 @@ describe('prerender failures and current limitations', () => {
     fs.readFile.mockResolvedValue(template.replace('</head>', ''));
     await import('./prerender');
     expect(fs.writeFile.mock.calls[0][1]).not.toContain('rel="canonical"');
-    expect(fs.writeFile.mock.calls[0][1]).toContain('<main id="main">');
+    expect(fs.writeFile.mock.calls[0][1]).toContain('<main id="main" tabindex="-1">');
   });
 
   it('currently rejects a title requiring HTML escaping because validation searches raw text', async () => {
@@ -169,7 +169,7 @@ describe('prerender filesystem integration', () => {
     for (const page of [...pages, notFound]) {
       const html = await realFs.readFile(outputFor(page, directory), 'utf8');
       expect(html).toContain(`<title>${page.title}</title>`);
-      expect(html).toContain('<main id="main">');
+      expect(html).toContain('<main id="main" tabindex="-1">');
       expect(html.match(/<title>/g)).toHaveLength(1);
     }
     expect(await realFs.readdir(directory)).toEqual(expect.arrayContaining(['index.html', '404.html', 'apps', 'support', 'privacy', 'contact']));

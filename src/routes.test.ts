@@ -21,7 +21,7 @@ describe('pageForPath', () => {
 
 describe('page metadata', () => {
   it('has unique route identities and useful titles and descriptions', () => {
-    expect(pages.map(page => page.page)).toEqual(['home', 'pebbles', 'support', 'contact', 'privacy']);
+    expect(pages.map(page => page.page)).toEqual(['home', 'pebbles', 'myStories', 'terms', 'support', 'contact', 'privacy']);
     expect(new Set(pages.map(page => page.path)).size).toBe(pages.length);
     for (const page of [...pages, notFound]) {
       expect(page.title).toContain('WisdomMedium');

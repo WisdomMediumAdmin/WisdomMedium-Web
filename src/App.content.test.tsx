@@ -12,6 +12,8 @@ describe('page shell', () => {
     ['/support/', 'How can we help?'],
     ['/contact/', 'Get in touch.'],
     ['/privacy/', 'Privacy Policy'],
+    ['/terms/', 'Terms of Use'],
+    ['/apps/my-stories/', 'Your words.Your stories.'],
     ['/404.html', 'That page isn’t here.']
   ])('renders the correct heading and accessible shell for %s', (path, heading) => {
     render(<App path={path} />);
@@ -54,7 +56,7 @@ describe('page content contracts', () => {
     for (const app of apps) {
       expect(screen.getByRole('heading', { name: app.name, level: 3 })).toBeTruthy();
       expect(screen.getByText(app.summary)).toBeTruthy();
-      expect(screen.getByText(`For ${app.platform}`)).toBeTruthy();
+      expect(screen.getAllByText(`For ${app.platform}`).length).toBeGreaterThan(0);
       expect(screen.getByRole('link', { name: `Explore ${app.name}` }).getAttribute('href')).toBe(`/apps/${app.slug}/`);
     }
     expect(screen.getByRole('link', { name: 'Get in touch' }).getAttribute('href')).toBe('/contact/');
@@ -86,13 +88,13 @@ describe('page content contracts', () => {
 
   it('publishes the privacy date, data practices, and contact destinations', () => {
     render(<App path="/privacy/" />);
-    expect(screen.getByText('November 2, 2026').getAttribute('datetime')).toBe('2026-11-02');
+    expect(screen.getByText('November 5, 2026').getAttribute('datetime')).toBe('2026-11-05');
     const policy = within(screen.getByRole('article'));
-    expect(policy.getAllByRole('heading', { level: 2 }).map(node => node.textContent)).toEqual(['WM Pebbles', 'Photos and Files', 'Data Retention and Deletion', 'Third-Party Services', 'SoapyMoney (iPhone, iPad and macOS)', 'Changes to This Privacy Policy', 'Contact']);
+    expect(policy.getAllByRole('heading', { level: 2 }).map(node => node.textContent)).toEqual(['Website privacy', 'Support communications', 'Your choices and privacy requests', 'My Stories for iPhone', 'WM Pebbles', 'Photos and Files', 'Data Retention and Deletion', 'Third-Party Services', 'SoapyMoney (iPhone, iPad and macOS)', 'Changes to This Privacy Policy', 'Contact']);
     expect(policy.getByText(/stored locally on the user's device/)).toBeTruthy();
     expect(policy.getByText(/does not collect, transmit, sell, rent, or share/)).toBeTruthy();
-    expect(policy.getAllByRole('listitem').map(node => node.textContent)).toEqual(['user accounts', 'advertising', 'tracking', 'analytics services', 'third-party advertising SDKs', 'server-side storage of user content']);
-    expect(policy.getByRole('link', { name: 'support@wisdommedium.com' }).getAttribute('href')).toBe('mailto:support@wisdommedium.com');
+    expect(within(document.getElementById('wm-pebbles')!).getAllByRole('listitem').map(node => node.textContent)).toEqual(['user accounts', 'advertising', 'tracking', 'analytics services', 'third-party advertising SDKs', 'server-side storage of user content']);
+    expect(policy.getAllByRole('link', { name: 'support@wisdommedium.com' })[0].getAttribute('href')).toBe('mailto:support@wisdommedium.com');
     expect(policy.getByRole('link', { name: 'https://wisdommedium.com' }).getAttribute('href')).toBe('https://wisdommedium.com');
   });
 });

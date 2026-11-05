@@ -10,7 +10,9 @@ The public company and support website for WisdomMedium. It is built with React,
 | `/apps/wm-pebbles/` | WM Pebbles product page |
 | `/support/` | App support |
 | `/contact/` | Public contact information |
-| `/privacy/` | WM Pebbles privacy policy |
+| `/privacy/` | Website and app-specific privacy disclosures |
+| `/terms/` | Website terms and My Stories conditions |
+| `/apps/my-stories/` | My Stories iPhone product page |
 | `/404.html` | Not-found page |
 
 The public support address is `support@wisdommedium.com`.
@@ -60,3 +62,18 @@ to `main`, pushes to `main`, and manual dispatch. Separate `Coverage (browser)` 
 Both must pass before linting and building. Pushes and manual runs then upload
 `dist/` and deploy to GitHub Pages; pull requests only validate the site.
 Vite uses `base: '/'` for the root of `wisdommedium.com`.
+
+## My Stories legal review
+
+The My Stories implementation is an unpublished review draft. Start with
+[owner decisions and exact publication steps](Docs/legal/MY_STORIES_OWNER_REVIEW.md),
+[source facts and conflicts](Docs/legal/MY_STORIES_FACTUAL_AUDIT.md),
+and [App Store privacy review](Docs/legal/MY_STORIES_APP_STORE_PRIVACY_REVIEW.md).
+Legal content is separated in `src/legal/`; prior WM Pebbles and SoapyMoney text
+is preserved in `src/App.tsx`. Stable app anchors are `/privacy/#my-stories`,
+`/terms/#my-stories` and `/support/#my-stories`.
+
+Pages publication now requires `node scripts/check-legal-publication.mjs` after
+the build, and is limited to `main`. The approval record intentionally remains
+pending. Local builds and PR checks remain available without legal approval.
+See [verification evidence](Docs/legal/VERIFICATION.md) for this draft's checks.

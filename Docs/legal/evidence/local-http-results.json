@@ -1,0 +1,114 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 5103,
+    "sha256": "797afd20dbee0ac495e88b03e16cc9f127f40914190d2cd4ed9e464534190e08"
+  },
+  {
+    "path": "/#apps",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 5103,
+    "sha256": "797afd20dbee0ac495e88b03e16cc9f127f40914190d2cd4ed9e464534190e08"
+  },
+  {
+    "path": "/privacy/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 18637,
+    "sha256": "8334d06497e8649226688b3bff97c8973aab9d30d93c7e6e951f85aa991d1f6e"
+  },
+  {
+    "path": "/privacy/#my-stories",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 18637,
+    "sha256": "8334d06497e8649226688b3bff97c8973aab9d30d93c7e6e951f85aa991d1f6e"
+  },
+  {
+    "path": "/terms/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 11298,
+    "sha256": "f9dc863ef8c5e425ecf84766bbefdb60c2a75312123d9f04583d578e2562bed0"
+  },
+  {
+    "path": "/terms/#my-stories",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 11298,
+    "sha256": "f9dc863ef8c5e425ecf84766bbefdb60c2a75312123d9f04583d578e2562bed0"
+  },
+  {
+    "path": "/apps/my-stories/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 4506,
+    "sha256": "c38e5ce981cd063a43ccaf9e2c6814ee5a12b19b131032652a80671377d109c6"
+  },
+  {
+    "path": "/support/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 6276,
+    "sha256": "9cbea92074dd402d0c3e889b93214891c3e03b8c1d15068272eab2b5f00cf937"
+  },
+  {
+    "path": "/contact/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 2775,
+    "sha256": "57e600590ea0214cec7ed699fed162cca7d440941583337f3a4c24957a565d4a"
+  },
+  {
+    "path": "/apps/wm-pebbles/",
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 4055,
+    "sha256": "09c33e38a0e9a6ac76426ece5e48a8f0355339b0edf1ccb28f26a93b4852a52e"
+  },
+  {
+    "path": "/images/my-stories-icon.png",
+    "status": 200,
+    "location": null,
+    "content_type": "image/png",
+    "bytes": 897603,
+    "sha256": "eaec41cf883efc9d0977137f35e5b0b0af3c5a5430f04679480e032c2417fe5b"
+  },
+  {
+    "path": "/privacy",
+    "status": 308,
+    "location": "/privacy/",
+    "content_type": null,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "/terms",
+    "status": 308,
+    "location": "/terms/",
+    "content_type": null,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "/missing-legal-page/",
+    "status": 404,
+    "location": null,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 2368,
+    "sha256": "ab99ba3bd8dc05456f866b867707ea176323517b088f07cce3cb0457ab728b54"
+  }
+]

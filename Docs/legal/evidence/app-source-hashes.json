@@ -1,0 +1,24 @@
+{
+  "review_date": "2026-11-05",
+  "checkout": "/Users/kazisiam/Desktop/WisdomMedium/My Stories",
+  "git_head": "1ef2bfcd32c2d3fd49f1c41b99e3863448b1caa4",
+  "warning": "Dirty working-tree bytes; not final release certification.",
+  "sha256": {
+    "Apple/Journal.xcodeproj/project.pbxproj": "4d3d55a3971c890421abf2cffc16aa3e7401759c5389c771b5cb6524d53b7d3b",
+    "Apple/Journal/JournalReleaseFeatures.swift": "e9fa2d7e9cc52ae2ca6a5f28d164f93c241b98c9839cc7e730b5d834fbd02d0e",
+    "Apple/Journal/PrivacyInfo.xcprivacy": "f1f154015ee12f3a20b837d28b5e03fa44eeb12a7eedb4ba1144477a3ef62e71",
+    "Apple/Journal/Writing/Features/JournalLibraryCoordinator.swift": "24b146d6dbabbbbb042db12e8a9f5f7f48f7aa2f82b3c6b0deccb95f6f52576a",
+    "Apple/Journal/Writing/Features/JournalsApplication.swift": "3e918b6aff1e72951bf3c64d6ef4aed4d02ea94f3e9ec9a49555b3d02a598b2e",
+    "Apple/Journal/Writing/Infrastructure/WritingStore.swift": "cae01f54dfd997329de88b6d70ad29fedc53e9d758efcb2ab02699dc807ea554",
+    "Apple/Journal/Writing/Infrastructure/JournalFileProtection.swift": "157cd68b2bda24add919008b92f2e1f48da6c068017de85970b921ec125fca18",
+    "Apple/Journal/Writing/Models/WritingProtection.swift": "2f867ac145ffc62167c8b848c5951320f5624ab612142903addb92b69d675372",
+    "Apple/Journal/Writing/Models/WritingService.swift": "cc28d682fbb3a374037ec57f09098f0d80486c5e274c8a5e1d3362e1edcfffdf",
+    "Apple/Journal/Writing/Models/WritingAttachmentAsset.swift": "36017569f4a6db0e65ce34a8e7034baff083970067019dd7fd0646ad4584591f",
+    "Apple/Journal/Writing/Models/AttachmentStorage.swift": "14803cfecb0adfd602b30ec97e856b35b904671fae1a3d977b02b01fd819c240",
+    "Apple/Journal/Writing/Models/JournalPendingDraft.swift": "5f464b17913ef488195b3105248c53f52dbf8583f4c65b6ae7d2f12778022e76",
+    "Apple/Journal/Writing/Features/WritingSession.swift": "6f1cfec0a0ed609bab074c974fd16554694161fba6df4845ea8ba221a73158eb",
+    "Apple/Journal/Writing/UIKit/JournalDeletedEntriesScreen.swift": "e55500fcb8a419f5a025219f33a90ecb6ac4591b1b901506b7a08995ecc2ba5a",
+    "Apple/Journal/Writing/UIKit/JournalSettingsScreen.swift": "bfbc56feae926e224461554cb97e3e5f5f11e3686eeb09d596df602502ea9a75",
+    "Apple/Journal/Assets.xcassets/AppIcon.appiconset/AppIcon.png": "eaec41cf883efc9d0977137f35e5b0b0af3c5a5430f04679480e032c2417fe5b"
+  }
+}
