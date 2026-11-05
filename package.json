@@ -11,6 +11,10 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
+    "test:browser": "vitest run --config vitest.browser.config.ts",
+    "test:node": "vitest run --config vitest.node.config.ts",
+    "test:coverage:browser": "vitest run --config vitest.browser.config.ts --coverage",
+    "test:coverage:node": "vitest run --config vitest.node.config.ts --coverage",
     "build": "npm run typecheck && vite build && node --import tsx scripts/prerender.tsx",
     "serve:static": "node scripts/static-server.mjs",
     "check": "npm run typecheck && npm run lint && npm run test && npm run build"
@@ -27,6 +31,7 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.3",
+    "@vitest/coverage-v8": "5.0.1",
     "eslint": "^9.35.0",
     "jsdom": "^27.0.0",
     "tsx": "^4.20.5",

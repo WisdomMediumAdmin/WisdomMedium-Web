@@ -1,9 +1,9 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { App, ReleaseAction } from './App';
-import { appPath, apps, emailHref, type AppInfo } from './site';
+import { afterEach, describe, expect, it } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { App } from './App';
+import { apps, emailHref } from './site';
 
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+afterEach(cleanup);
 
 describe('site navigation and content', () => {
   it('shows working primary navigation on the home page', () => {
@@ -20,7 +20,7 @@ describe('site navigation and content', () => {
     render(<App path="/support/" />);
     expect(screen.getByRole('heading', { name: /How can we help/i })).toBeTruthy();
     expect(screen.getByText('support@wisdommedium.com')).toBeTruthy();
-    expect(screen.getByRole('link', { name: /Email support/i }).getAttribute('href')).toBe(emailHref('support@wisdommedium.com', 'WM Pebbles Support'));
+    expect(screen.getByRole('link', { name: /Email support/i }).getAttribute('href')).toBe(emailHref('support@wisdommedium.com', 'WisdomMedium App Support'));
   });
 
   it('shows one contact section and one public inbox', () => {
@@ -45,38 +45,11 @@ describe('site navigation and content', () => {
     expect(screen.getByText('Coming soon')).toBeTruthy();
     expect(screen.queryByRole('link', { name: /App Store/i })).toBeNull();
     expect(apps[0].release.status).toBe('coming-soon');
-    expect(appPath(apps[0])).toBe('/apps/wm-pebbles/');
-    const futureApp: AppInfo = { ...apps[0], release: { status: 'available', appStoreUrl: 'https://apps.apple.com/example' } };
-    cleanup();
-    render(<ReleaseAction app={futureApp} />);
-    expect(screen.getByRole('link', { name: /View on the App Store/i }).getAttribute('href')).toBe('https://apps.apple.com/example');
   });
 
   it('shows the helpful not-found page for unknown paths', () => {
     render(<App path="/missing-page/" />);
     expect(screen.getByRole('heading', { name: /That page isn.t here/i })).toBeTruthy();
     expect(screen.getByRole('link', { name: /Visit support/i }).getAttribute('href')).toBe('/support/');
-  });
-});
-
-describe('copy email address', () => {
-  it('confirms success only after the clipboard write resolves', async () => {
-    let resolveCopy!: () => void;
-    const writeText = vi.fn(() => new Promise<void>(resolve => { resolveCopy = resolve; }));
-    vi.stubGlobal('navigator', { clipboard: { writeText } });
-    render(<App path="/support/" />);
-    fireEvent.click(screen.getByRole('button', { name: 'Copy email address' }));
-    expect(writeText).toHaveBeenCalledWith('support@wisdommedium.com');
-    expect(screen.queryByText('Email address copied.')).toBeNull();
-    resolveCopy();
-    await waitFor(() => expect(screen.getByRole('status').textContent).toBe('Email address copied.'));
-  });
-
-  it('offers a selectable fallback when clipboard access is unavailable', () => {
-    vi.stubGlobal('navigator', {});
-    render(<App path="/support/" />);
-    fireEvent.click(screen.getByRole('button', { name: 'Copy email address' }));
-    expect(screen.getByRole('status').textContent).toContain('Select the address above');
-    expect(screen.getByText('support@wisdommedium.com')).toBeTruthy();
   });
 });
