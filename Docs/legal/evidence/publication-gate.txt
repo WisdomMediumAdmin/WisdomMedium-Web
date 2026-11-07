@@ -1,0 +1,8 @@
+file:///private/tmp/wisdommedium-my-stories-legal/scripts/check-legal-publication.mjs:8
+if (!approved) throw new Error('Publication blocked: record the required owner decisions in Docs/legal/publication-approval.json.');
+                     ^
+
+Error: Publication blocked: record the required owner decisions in Docs/legal/publication-approval.json.
+    at file:///private/tmp/wisdommedium-my-stories-legal/scripts/check-legal-publication.mjs:8:22
+
+Node.js v26.13.0

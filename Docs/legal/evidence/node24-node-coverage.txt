@@ -1,0 +1,22 @@
+
+> wisdommedium-website@1.0.0 test:coverage:node
+> vitest run --config vitest.node.config.ts --coverage
+
+
+ RUN  v5.0.1 /private/tmp/wisdommedium-my-stories-legal
+      Coverage enabled with v8
+
+
+ Test Files  4 passed (4)
+      Tests  65 passed (65)
+   Start at  18:28:29
+   Duration  475ms (tests 53%, transform 26%, worker 12%, import 9%)
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 49/49 )
+Branches     : 100% ( 37/37 )
+Functions    : 100% ( 5/5 )
+Lines        : 100% ( 43/43 )
+================================================================================

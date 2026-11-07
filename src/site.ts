@@ -18,6 +18,7 @@ export type AppInfo = {
   release: AppRelease;
   privacyPolicyPath: string;
   iconPath?: string;
+  termsPath?: string;
 };
 
 export const apps: AppInfo[] = [
@@ -29,6 +30,17 @@ export const apps: AppInfo[] = [
     description: 'Organize tasks into pebbles and keep your tasks, notes, and journals together in one thoughtful space.',
     release: { status: 'coming-soon' },
     privacyPolicyPath: '/privacy/'
+  },
+  {
+    slug: 'my-stories',
+    name: 'My Stories',
+    platform: 'iPhone',
+    summary: 'A private place for your words, memories and everyday stories.',
+    description: 'Write journal entries with rich formatting, add photos, videos and files you select, and protect individual entries with an optional lock. Your journal stays in a local library on your iPhone, without a WisdomMedium account.',
+    release: { status: 'coming-soon' },
+    privacyPolicyPath: '/privacy/#my-stories',
+    termsPath: '/terms/#my-stories',
+    iconPath: '/images/my-stories-icon.png'
   }
 ];
 

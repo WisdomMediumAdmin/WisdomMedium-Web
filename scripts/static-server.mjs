@@ -4,16 +4,17 @@ import path from 'node:path';
 
 const root = path.resolve('dist');
 const port = Number(process.env.PORT || 4174);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8' };
 
 http.createServer(async (req, res) => {
-  const pathname = new URL(req.url || '/', 'http://localhost').pathname;
+  const url = new URL(req.url || '/', 'http://localhost');
+  const pathname = url.pathname;
   const decoded = decodeURIComponent(pathname);
   const filePath = path.resolve(root, `.${decoded}`);
   if (filePath !== root && !filePath.startsWith(`${root}${path.sep}`)) { res.writeHead(403).end(); return; }
   try {
     const info = await stat(filePath);
-    if (info.isDirectory() && !pathname.endsWith('/')) { res.writeHead(308, { Location: `${pathname}/${new URL(req.url || '/', 'http://localhost').search}` }).end(); return; }
+    if (info.isDirectory() && !pathname.endsWith('/')) { res.writeHead(308, { Location: `${pathname}/${url.search}` }).end(); return; }
     const target = info.isDirectory() ? path.join(filePath, 'index.html') : filePath;
     const content = await readFile(target);
     res.writeHead(200, { 'Content-Type': types[path.extname(target)] || 'application/octet-stream' }).end(content);

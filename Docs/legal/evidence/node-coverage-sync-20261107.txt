@@ -1,0 +1,25 @@
+
+> wisdommedium-website@1.0.0 test:coverage:node
+> vitest run --config vitest.node.config.ts --coverage
+
+
+ RUN  v5.0.1 /private/tmp/wisdommedium-legal-sync-20261107
+      Coverage enabled with v8
+
+
+ Test Files  4 passed (4)
+      Tests  65 passed (65)
+   Start at  13:11:02
+   Duration  10.93s (tests 66%, transform 23%, import 8%, worker 3%)
+
+    Isolate  4 workers spawned · ~1.45s startup each (spawn + environment, per file)
+             at least ~1.45s faster with isolate: false — reuses workers across files instead of one per file
+
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 49/49 )
+Branches     : 100% ( 37/37 )
+Functions    : 100% ( 5/5 )
+Lines        : 100% ( 43/43 )
+================================================================================

@@ -1,0 +1,14 @@
+{
+  "skipEvidence": {
+    "focused": "Skip to content",
+    "outline": "solid",
+    "top": 12
+  },
+  "skipLinkFocusTarget": "main",
+  "privacyAnchorTop": 24.40625,
+  "termsAnchor": {
+    "top": 24.15625,
+    "url": "http://127.0.0.1:4189/terms/#my-stories"
+  },
+  "logs": []
+}

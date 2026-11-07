@@ -1,0 +1,78 @@
+{
+  "home": {
+    "sha256": "c05b083a3ad73a5da4b37d0c548d6e95fd260ca65eb050a1f93f9abff801f1f1",
+    "my_stories_present": false,
+    "soapymoney_present": false,
+    "script_sources": [
+      "/assets/index-D7JYlv8w.js"
+    ],
+    "linked_resources": [
+      "/favicon.svg",
+      "/assets/index-Dd_ihnSG.css",
+      "https://wisdommedium.com/"
+    ],
+    "apps_anchor": true
+  },
+  "privacy": {
+    "sha256": "b8c1c1cf8a1f4fdbe99f752fe252e42a667361891e05fde42536504a9ac167ed",
+    "my_stories_present": false,
+    "soapymoney_present": false,
+    "script_sources": [
+      "/assets/index-D7JYlv8w.js"
+    ],
+    "linked_resources": [
+      "/favicon.svg",
+      "/assets/index-Dd_ihnSG.css",
+      "https://wisdommedium.com/privacy/"
+    ],
+    "apps_anchor": false
+  },
+  "terms": {
+    "sha256": "d593aafb48bad30928b06293b90f755827ee163c6459489054f278061e2eedaa",
+    "my_stories_present": false,
+    "soapymoney_present": false,
+    "script_sources": [
+      "/assets/index-D7JYlv8w.js"
+    ],
+    "linked_resources": [
+      "/favicon.svg",
+      "/assets/index-Dd_ihnSG.css"
+    ],
+    "apps_anchor": false
+  },
+  "js": {
+    "sha256": "9304f15e9f71671411ef4901918580c561f25e232096b25b497f600d77820cba",
+    "external_urls": [
+      "http://www.w3.org/1998/Math/MathML",
+      "http://www.w3.org/1999/xlink",
+      "http://www.w3.org/2000/svg",
+      "http://www.w3.org/XML/1998/namespace",
+      "https://react.dev/errors/",
+      "https://wisdommedium.com"
+    ],
+    "tracking_names": {
+      "google-analytics": false,
+      "googletagmanager": false,
+      "plausible.io": false,
+      "segment.io": false,
+      "hotjar": false,
+      "document.cookie": false,
+      "localStorage": false,
+      "@import": false
+    }
+  },
+  "css": {
+    "sha256": "7d2e4df01e5051e8ad8dd2e85be2666438dafaeb659ffcbb80b494debd59a004",
+    "external_urls": [],
+    "tracking_names": {
+      "google-analytics": false,
+      "googletagmanager": false,
+      "plausible.io": false,
+      "segment.io": false,
+      "hotjar": false,
+      "document.cookie": false,
+      "localStorage": false,
+      "@import": false
+    }
+  }
+}

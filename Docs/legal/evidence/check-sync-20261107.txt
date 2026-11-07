@@ -1,0 +1,54 @@
+
+> wisdommedium-website@1.0.0 check
+> npm run typecheck && npm run lint && npm run test && npm run build
+
+
+> wisdommedium-website@1.0.0 typecheck
+> tsc --noEmit
+
+
+> wisdommedium-website@1.0.0 lint
+> eslint .
+
+
+> wisdommedium-website@1.0.0 test
+> vitest run
+
+
+ RUN  v5.0.1 /private/tmp/wisdommedium-legal-sync-20261107
+
+
+ Test Files  14 passed (14)
+      Tests  177 passed (177)
+   Start at  13:10:27
+   Duration  6.70s (environment 50%, tests 31%, import 14%, transform 5%, worker 1%)
+
+Environment  jsdom was created 14 times · 5.49s total, 50% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+> wisdommedium-website@1.0.0 build
+> npm run typecheck && vite build && node --import tsx scripts/prerender.tsx
+
+
+> wisdommedium-website@1.0.0 typecheck
+> tsc --noEmit
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 34 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.51 kB │ gzip:  0.32 kB
+dist/assets/index-D6_ew52g.css   14.89 kB │ gzip:  4.06 kB
+dist/assets/index-Zc2mRKjT.js   274.59 kB │ gzip: 83.89 kB
+✓ built in 1.79s
+Rendered /
+Rendered /apps/wm-pebbles/
+Rendered /apps/my-stories/
+Rendered /terms/
+Rendered /support/
+Rendered /contact/
+Rendered /privacy/
+Rendered /404.html

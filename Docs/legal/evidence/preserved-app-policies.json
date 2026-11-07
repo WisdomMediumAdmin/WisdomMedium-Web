@@ -1,0 +1,22 @@
+{
+  "WM Pebbles": {
+    "unchanged": true,
+    "sha256": "c8629fbd0cd28e558255156928e2f382358146c20d0700b95fc2253341b78eaf"
+  },
+  "Photos and Files": {
+    "unchanged": true,
+    "sha256": "5b8fc2a8ff39081caaf581b84b8b4d1705763797f15d50e0a65f09fede2f5edd"
+  },
+  "Data Retention and Deletion": {
+    "unchanged": true,
+    "sha256": "bf5c9ebb8758fc17e02ce55a5d5ef045becb23cb8b083cd70a7e55c413e38dd4"
+  },
+  "Third-Party Services": {
+    "unchanged": true,
+    "sha256": "9060c1c6acef554f6af859755793b09f103eafa870ce4ce3a45b64c6989ccd04"
+  },
+  "SoapyMoney (iPhone, iPad and macOS)": {
+    "unchanged": true,
+    "sha256": "15bd4f1f48eb08b2a9fc4a34c298f697ec4cefaf561fcb9210ff1c02640b35bf"
+  }
+}

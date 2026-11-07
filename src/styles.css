@@ -984,3 +984,21 @@ button {
     transform:none
   }
 }
+
+/* Portfolio additions and readable, directly linkable legal sections. */
+.app-grid { display:grid; gap:28px }
+.app-icon { display:block; width:min(100%,220px); height:auto; border-radius:23%; box-shadow:0 18px 40px #18384322 }
+.stories-art { background:#e0eaf4 }
+.stories-art .app-icon { width:min(100%,280px) }
+.app-legal-links { display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:22px; font-size:14px; line-height:1.7 }
+.app-legal-links a { padding:6px 0; text-underline-offset:4px }
+.legal-nav { display:flex; flex-wrap:wrap; gap:8px 12px; padding:24px 0; margin-bottom:36px; border-bottom:1px solid #d4ded5 }
+.legal-nav a { display:block; padding:10px 14px; background:#e7efe8; border-radius:10px; font-weight:650 }
+.legal-review { padding:22px 24px; background:#fff2d3; border:1px solid #dcc68a; border-radius:16px; color:#4e4226 }
+.legal-review p { margin-top:8px; color:#4e4226 }
+.privacy-policy h3 { font-size:21px; line-height:1.4; margin:30px 0 12px; letter-spacing:-.025em }
+.privacy-policy section { margin-bottom:56px }
+.privacy-policy ol { padding-left:24px }
+.privacy-policy li + li { margin-top:12px }
+.privacy-policy h2, .privacy-policy h3, section[id] { scroll-margin-top:24px }
+.privacy-policy p, .privacy-policy li { overflow-wrap:anywhere }

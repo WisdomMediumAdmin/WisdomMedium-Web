@@ -1,0 +1,12 @@
+{
+  "main": {
+    "filesChecked": 28,
+    "changedSinceSnapshot": []
+  },
+  "prior-review": {
+    "filesChecked": 10,
+    "changedSinceSnapshot": []
+  },
+  "policyBlocks": "Five pre-existing app policy blocks unchanged against 8f212bf; see preserved-policies-sync-20261107.json",
+  "subsequentWork": "Ten changed files copied from the prior review checkout; four subsequently generated evidence files also retained under prior-review-20261107. Originals remain untouched."
+}

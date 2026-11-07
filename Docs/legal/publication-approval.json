@@ -1,0 +1,12 @@
+{
+  "status": "pending",
+  "effectiveDate": null,
+  "approvals": {
+    "operatorIdentityAndRegions": false,
+    "releaseContractAndDeletion": false,
+    "supportRetentionAndProviders": false,
+    "applePrivacyAnswersAndDiagnostics": false,
+    "termsAndConsumerRights": false,
+    "finalRenderedPolicies": false
+  }
+}
