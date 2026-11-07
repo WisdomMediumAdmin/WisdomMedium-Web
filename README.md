@@ -59,15 +59,15 @@ npm run test:coverage:node
 The GitHub Actions workflow in `.github/workflows/deploy.yml` runs on pull requests
 to `main`, pushes to `main`, and manual dispatch. Separate `Coverage (browser)` and
 `Coverage (node)` jobs each require at least 98% lines and branches under Node 24.
-Both must pass before linting and building. Pushes and manual runs then upload
-`dist/` and deploy to GitHub Pages; pull requests only validate the site.
+Both must pass before linting and building. Only approved `main` pushes and manual runs can upload
+`dist/` and deploy to GitHub Pages after the legal publication gate; pull requests only validate the site.
 Vite uses `base: '/'` for the root of `wisdommedium.com`.
 
 ## My Stories legal review
 
 The My Stories implementation is an unpublished review draft. Start with
 [owner decisions and exact publication steps](Docs/legal/MY_STORIES_OWNER_REVIEW.md),
-[source facts and conflicts](Docs/legal/MY_STORIES_FACTUAL_AUDIT.md),
+[accepted release facts](Docs/legal/MY_STORIES_FACTUAL_AUDIT.md),
 and [App Store privacy review](Docs/legal/MY_STORIES_APP_STORE_PRIVACY_REVIEW.md).
 Legal content is separated in `src/legal/`; prior WM Pebbles and SoapyMoney text
 is preserved in `src/App.tsx`. Stable app anchors are `/privacy/#my-stories`,
@@ -76,4 +76,4 @@ is preserved in `src/App.tsx`. Stable app anchors are `/privacy/#my-stories`,
 Pages publication now requires `node scripts/check-legal-publication.mjs` after
 the build, and is limited to `main`. The approval record intentionally remains
 pending. Local builds and PR checks remain available without legal approval.
-See [verification evidence](Docs/legal/VERIFICATION.md) for this draft's checks.
+See [current verification evidence](Docs/legal/VERIFICATION_20261107.md) for this draft's checks.

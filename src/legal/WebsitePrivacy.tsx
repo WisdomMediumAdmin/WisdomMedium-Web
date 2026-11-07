@@ -1,7 +1,7 @@
 import { site } from '../site';
 
 export function PolicyReviewNotice() {
-  return <aside className="legal-review" data-legal-draft="true"><strong>Review draft · November 5, 2026</strong><p>This policy update is not yet effective. Publication awaits verification of the release, operator details and support practices.</p></aside>;
+  return <aside className="legal-review" data-legal-draft="true"><strong>Review draft · November 7, 2026</strong><p>This policy update is not yet effective. Publication awaits confirmation of operator details, support practices and an effective date. The support handling described below is proposed for owner review; provider retention and access practices have not been fully verified.</p></aside>;
 }
 
 export function WebsitePrivacy() {

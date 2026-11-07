@@ -88,7 +88,7 @@ describe('page content contracts', () => {
 
   it('publishes the privacy date, data practices, and contact destinations', () => {
     render(<App path="/privacy/" />);
-    expect(screen.getByText('November 5, 2026').getAttribute('datetime')).toBe('2026-11-05');
+    expect(screen.getByText('November 7, 2026').getAttribute('datetime')).toBe('2026-11-07');
     const policy = within(screen.getByRole('article'));
     expect(policy.getAllByRole('heading', { level: 2 }).map(node => node.textContent)).toEqual(['Website privacy', 'Support communications', 'Your choices and privacy requests', 'My Stories for iPhone', 'WM Pebbles', 'Photos and Files', 'Data Retention and Deletion', 'Third-Party Services', 'SoapyMoney (iPhone, iPad and macOS)', 'Changes to This Privacy Policy', 'Contact']);
     expect(policy.getByText(/stored locally on the user's device/)).toBeTruthy();

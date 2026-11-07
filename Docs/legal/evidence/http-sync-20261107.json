@@ -1,0 +1,80 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/privacy/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8",
+    "hasMyStories": true,
+    "canonical": "https://wisdommedium.com/privacy/",
+    "isDraft": true
+  },
+  {
+    "path": "/terms/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8",
+    "hasMyStories": true,
+    "canonical": "https://wisdommedium.com/terms/",
+    "isDraft": true
+  },
+  {
+    "path": "/support/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/apps/my-stories/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/apps/wm-pebbles/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/contact/",
+    "status": 200,
+    "location": null,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/privacy",
+    "status": 308,
+    "location": "/privacy/",
+    "contentType": null
+  },
+  {
+    "path": "/terms",
+    "status": 308,
+    "location": "/terms/",
+    "contentType": null
+  },
+  {
+    "path": "/not-found",
+    "status": 404,
+    "location": null,
+    "contentType": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/images/my-stories-icon.png",
+    "status": 200,
+    "location": null,
+    "contentType": "image/png"
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": 200,
+    "location": null,
+    "contentType": "application/xml"
+  }
+]

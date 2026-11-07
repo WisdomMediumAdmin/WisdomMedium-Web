@@ -1,0 +1,19 @@
+{
+  "retrievedAt": "2026-11-07",
+  "repository": "WisdomMediumAdmin/my-stories",
+  "main": "7c9217a2bdd045128301a0af703979d707814b50",
+  "releaseTag": "rc-ios-1.0-1-20261105",
+  "tagObject": "00bab92cacadf25fc35323023503812673ec9d59",
+  "tagCommit": "7c9217a2bdd045128301a0af703979d707814b50",
+  "files": [
+    {
+      "path": "Docs/Release/MY_STORIES_WEBSITE_CONTRACT.md",
+      "blob": "615e26bfe8dce70f30a1e53970b43833ec0a0847"
+    },
+    {
+      "path": "Docs/Release/RELEASE_HARDENING_20261105.md",
+      "blob": "bfca6082e4c002a4037f4e739b87f29d2cf7f834"
+    }
+  ],
+  "verification": "Both files fetched directly from GitHub main and the pinned commit; contents match. Local development checkout not used."
+}

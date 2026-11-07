@@ -39,15 +39,19 @@ describe('legal and portfolio navigation', () => {
       expect(privacy.getElementById(id)).not.toBeNull();
     }
     const stories = privacy.getElementById('my-stories')!.textContent!;
-    for (const limitation of ['excluded from Apple system backups', 'keys are bound to the original device',
-      'retain attachment payloads in its local database', 'undo history', 'no automatic expiry', 'cannot remotely']) {
+    for (const limitation of ['eligible for Apple-managed device backups', 'keys are bound to the original device',
+      'removes attachment payloads', 'undo history', 'no automatic expiry', 'cannot remotely', 'not a promise of forensic erasure', 'Settings also offers a retry', 'minimum supported iOS version of 18.6', 'permits deletion, not access', '50 MiB', '60-second expiry', 'Time to write.', 'Keychain item', 'operating system’s sandbox']) {
       expect(stories.toLowerCase()).toContain(limitation.toLowerCase());
     }
+    expect(stories).not.toContain('excluded from Apple system backups');
+    expect(stories).not.toContain('retain attachment payloads in its local database');
     const terms = documents.get('/terms/')!;
+    expect(terms.getElementById('my-stories')!.textContent).toContain('eligible for Apple-managed device backups');
+    expect(terms.getElementById('my-stories')!.textContent).toContain('unreferenced attachment payloads');
     expect(terms.getElementById('my-stories-license')!.nextElementSibling!.textContent).toContain('not a custom App Store EULA');
     for (const path of ['/privacy/', '/terms/']) {
       expect(documents.get(path)!.querySelector('[data-legal-draft="true"]')).not.toBeNull();
-      expect(documents.get(path)!.querySelector('time')!.dateTime).toBe('2026-11-05');
+      expect(documents.get(path)!.querySelector('time')!.dateTime).toBe('2026-11-07');
     }
   });
 });

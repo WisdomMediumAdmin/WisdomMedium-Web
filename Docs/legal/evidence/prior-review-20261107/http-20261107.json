@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/privacy/",
+    "status": 200,
+    "myStoriesSection": true,
+    "sha256": "b4767fa53a96626bc930b6206d0b239c4e6c49713915d9486b480cecc527acb2"
+  },
+  {
+    "route": "/terms/",
+    "status": 200,
+    "myStoriesSection": true,
+    "sha256": "96b72e2da07291e48ac1e08a8637a4dff48f91fa362450ab0c25dfb3c82c2985"
+  }
+]
