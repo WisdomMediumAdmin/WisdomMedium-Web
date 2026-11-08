@@ -17,7 +17,7 @@ export type AppInfo = {
   description: string;
   release: AppRelease;
   privacyPolicyPath: string;
-  iconPath?: string;
+  iconPath: string;
 };
 
 export const apps: AppInfo[] = [
@@ -25,13 +25,15 @@ export const apps: AppInfo[] = [
     slug: 'potatobeans', name: 'PotatoBeans', platform: 'iPhone, iPad and Mac',
     summary: 'Create Beans. Keep your tasks simple.',
     description: 'Create, modify and delete Beans and their tasks, with optional iCloud sync.',
-    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/potatobeans/privacy/'
+    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/potatobeans/privacy/',
+    iconPath: '/images/apps/potatobeans-512.webp'
   },
   {
     slug: 'my-stories', name: 'My Stories', platform: 'iPhone',
     summary: 'A place for the moments you want to keep.',
     description: 'Keep a local journal with rich text, photos, videos and selected files on your iPhone.',
-    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/my-stories/privacy/'
+    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/my-stories/privacy/',
+    iconPath: '/images/apps/my-stories-512.webp'
   }
 ];
 

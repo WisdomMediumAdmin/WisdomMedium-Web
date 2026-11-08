@@ -3,6 +3,7 @@ import { PotatoProduct, StoriesProduct, PotatoSupportPage, StoriesSupportPage } 
 import { useState } from 'react';
 import { appPath, apps, emailHref, site, type AppInfo } from './site';
 import { pageForPath, type Page } from './routes';
+import { AppIcon } from './AppIcon';
 
 function Brand() {
   return <a className="brand" href="/" aria-label="WisdomMedium home"><span className="brand-mark" aria-hidden="true">w.</span><span>WisdomMedium</span></a>;
@@ -41,7 +42,7 @@ export function ReleaseAction({ app }: { app: AppInfo }) {
 
 function AppCard({ app }: { app: AppInfo }) {
   return <article className="app-card">
-    <div className="app-card-art" aria-hidden="true"><div className="app-art-lines"><span>make room for</span><strong>what matters.</strong><i></i><i></i><i></i></div></div>
+    <div className={`app-card-art app-art--${app.slug}`}><AppIcon app={app} /></div>
     <div className="app-card-copy"><div className="app-card-top"><span className="eyebrow">For {app.platform}</span><ReleaseAction app={app} /></div>
       <h3>{app.name}</h3><p>{app.summary}</p><a className="text-link" href={appPath(app)}>Explore {app.name}<span aria-hidden="true">↗</span></a>
     </div>

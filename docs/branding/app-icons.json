@@ -1,0 +1,90 @@
+[
+  {
+    "app": "potatobeans",
+    "repository": "WisdomMediumAdmin/WM-Pebbles",
+    "commit": "d68c3b1afa56199282dff25e3ced8279dcf77c53",
+    "source": "Apple/iOS/PotatoBeans/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+    "source_sha256": "4de9f1afb46d404328eea1fa1d8204055ede1a96dccb6048651d958056d7c5da",
+    "scheme": "PotatoBeans MVP",
+    "configuration": "MVP Release",
+    "asset_catalog": "AppIcon",
+    "source_size": [
+      1024,
+      1024
+    ],
+    "variants": [
+      {
+        "path": "/images/apps/potatobeans-256.webp",
+        "width": 256,
+        "bytes": 48398,
+        "sha256": "5d88776501f0f8974db10c13edc689e786073c2b133a83b1c6abfbecd88a0cfc",
+        "rgba_sha256": "b7d2731d5e1fe9c378655c2c257e4750d86c4d1915f492b2167ae96b7e67ae78"
+      },
+      {
+        "path": "/images/apps/potatobeans-512.webp",
+        "width": 512,
+        "bytes": 194386,
+        "sha256": "3a6d6ca9832190c7430c6ee5750443bc690e40998fb18d62829d36a7fc54f31a",
+        "rgba_sha256": "5013956bd4d74deb31d89f5f0c99c8c96f042554dd1a0c2f1f42ef00d615d3b8"
+      },
+      {
+        "path": "/images/apps/potatobeans-768.webp",
+        "width": 768,
+        "bytes": 450874,
+        "sha256": "5749aa1e26a74991c62bc6633d45a77fca847cdfaddd260d96d686d76e062483",
+        "rgba_sha256": "40d366f528c63f54518017921038bae4a9a40c1f4824e22aec33f06e54aa4b49"
+      },
+      {
+        "path": "/images/apps/potatobeans-1024.webp",
+        "width": 1024,
+        "bytes": 750846,
+        "sha256": "1d8339b5c2164007e4bafe2e45bdcaaa6b6c3be89a7168eaea0dce93677a2fc2",
+        "rgba_sha256": "cb644ed2b1d630ee2573f4a6e4e2af590cd30b87fbc12227972834cf66bb6cd0"
+      }
+    ]
+  },
+  {
+    "app": "my-stories",
+    "repository": "WisdomMediumAdmin/my-stories",
+    "commit": "2d9d0072b2aebef293aa15ec1898976d86d4acae",
+    "source": "Apple/Journal/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+    "source_sha256": "eaec41cf883efc9d0977137f35e5b0b0af3c5a5430f04679480e032c2417fe5b",
+    "scheme": "Journal",
+    "configuration": "Release",
+    "asset_catalog": "AppIcon",
+    "source_size": [
+      1024,
+      1024
+    ],
+    "variants": [
+      {
+        "path": "/images/apps/my-stories-256.webp",
+        "width": 256,
+        "bytes": 46500,
+        "sha256": "3954a838849964b093be17e27bd9cbff4b6a975216b713b472f8195aee73fdc6",
+        "rgba_sha256": "a6adfa4f855ae94564315d2d2a95e8c130fce54bd1ca7f522f759a9b228304d5"
+      },
+      {
+        "path": "/images/apps/my-stories-512.webp",
+        "width": 512,
+        "bytes": 170658,
+        "sha256": "326e2ba1ae3007a82aa91b86e1cb64eb868af4d108e0366201e79f0c4f993613",
+        "rgba_sha256": "c43330d59f47e392146e12ab2705d074467e6140b638d104acd04516da4208e2"
+      },
+      {
+        "path": "/images/apps/my-stories-768.webp",
+        "width": 768,
+        "bytes": 372288,
+        "sha256": "07af425bce3a653b6c8992aa4894217ea1a2757bcada51f08dd5a198b93ef135",
+        "rgba_sha256": "408af99c1dcae2a7fd103db6e2715852b193aa0aaef3290844bd2e16b67c1220"
+      },
+      {
+        "path": "/images/apps/my-stories-1024.webp",
+        "width": 1024,
+        "bytes": 568578,
+        "sha256": "5d227c29aae499ae92e26361342dd54db10b042b4e5f0a94a0a7147c67248ffb",
+        "rgba_sha256": "885b78dbaddf831c24af0c73dad362e10e019a09a71a93b50c31375dd8753730"
+      }
+    ]
+  }
+]
