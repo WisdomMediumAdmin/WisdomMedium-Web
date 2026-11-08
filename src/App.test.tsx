@@ -20,7 +20,7 @@ describe('site navigation and content', () => {
     render(<App path="/support/" />);
     expect(screen.getByRole('heading', { name: /How can we help/i })).toBeTruthy();
     expect(screen.getByText('support@wisdommedium.com')).toBeTruthy();
-    expect(screen.getByRole('link', { name: /Email support/i }).getAttribute('href')).toBe(emailHref('support@wisdommedium.com', 'WM Pebbles Support'));
+    expect(screen.getByRole('link', { name: /Email support/i }).getAttribute('href')).toBe(emailHref('support@wisdommedium.com', 'WisdomMedium App Support'));
   });
 
   it('shows one contact section and one public inbox', () => {

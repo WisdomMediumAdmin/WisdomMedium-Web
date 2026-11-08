@@ -984,3 +984,11 @@ button {
     transform:none
   }
 }
+
+/* Legal pages keep long policy text readable and links usable on phones. */
+.legal-links { display:flex; flex-wrap:wrap; gap:12px 24px; margin:24px 0; }
+.legal-links a { padding-block:10px; text-underline-offset:4px; }
+.prose-page h3 { margin-top:30px; line-height:1.4; }
+.prose-page section { scroll-margin-top:24px; }
+.prose-page a,.contact-panel p,.site-footer p { overflow-wrap:anywhere; }
+.site-footer nav { flex-wrap:wrap; }

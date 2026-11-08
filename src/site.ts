@@ -29,6 +29,18 @@ export const apps: AppInfo[] = [
     description: 'Organize tasks into pebbles and keep your tasks, notes, and journals together in one thoughtful space.',
     release: { status: 'coming-soon' },
     privacyPolicyPath: '/privacy/'
+  },
+  {
+    slug: 'potatobeans', name: 'PotatoBeans', platform: 'iPhone, iPad and Mac',
+    summary: 'Tasks, notes and focus, with room for your day.',
+    description: 'Organize tasks, keep notes and connect selected calendars, with optional iCloud for eligible library content.',
+    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/potatobeans/privacy/'
+  },
+  {
+    slug: 'my-stories', name: 'My Stories', platform: 'iPhone',
+    summary: 'A place for the moments you want to keep.',
+    description: 'Keep a local journal with rich text, photos, videos and selected files on your iPhone.',
+    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/my-stories/privacy/'
   }
 ];
 
