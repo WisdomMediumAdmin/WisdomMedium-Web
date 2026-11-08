@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { emailHref, site } from './site';
 
-export const operatorDescription = 'Kazi Ahmed Siam operates PotatoBeans and My Stories under the WisdomMedium brand. WisdomMedium is not a registered LLC or corporation.';
+export const operatorDescription = 'Kazi Ahmed Siam operates PotatoBeans and My Stories under the WisdomMedium brand.';
 
 export function LegalDate() {
   return <p className="privacy-date">Last updated: <time dateTime="2026-11-07">November 7, 2026</time></p>;

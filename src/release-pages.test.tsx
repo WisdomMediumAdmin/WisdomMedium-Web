@@ -23,7 +23,7 @@ describe('release legal and support destinations', () => {
     render(<App path={path} />);
     for (const id of ['potatobeans', 'my-stories']) expect(document.getElementById(id)).not.toBeNull();
     expect(screen.getByText('November 7, 2026').getAttribute('datetime')).toBe('2026-11-07');
-    expect(screen.getByText(/not a registered LLC or corporation/)).toBeTruthy();
+    expect(screen.getByText(/Kazi Ahmed Siam operates PotatoBeans and My Stories/)).toBeTruthy();
   });
 
   it('keeps the shared policy short and preserves the legacy destination', () => {
@@ -65,7 +65,11 @@ describe('release legal and support destinations', () => {
     for (const page of pages) {
       const doc = new DOMParser().parseFromString(renderToString(<App path={page.path} />), 'text/html');
       const copy = doc.body.textContent! + page.description;
-      expect(copy).not.toMatch(/SoapyMoney|Android|Google Play/);
+      expect(copy).not.toMatch(/SoapyMoney|Android|Google Play|not a registered LLC or corporation/);
+      if (page.page === 'home') {
+        expect(copy).not.toMatch(/Kazi Ahmed Siam/);
+        expect(doc.getElementById('about')?.textContent).toContain('independent app development brand');
+      }
       if (page.page === 'home') expect(copy).not.toMatch(/WM Pebbles/);
       if (page.path.includes('potatobeans')) {
         expect(copy).not.toMatch(/Focus|Calendar|widgets|Watch companion|keep notes|protected writing/);

@@ -19,7 +19,7 @@ function Header() {
 
 function Footer() {
   return <footer className="site-footer"><div className="shell footer-inner">
-    <div><a className="footer-brand" href="/">WisdomMedium</a><p>Thoughtful apps for everyday life.</p><small>© 2026 WisdomMedium</small><p className="small-note">Independent apps by Kazi Ahmed Siam.</p></div>
+    <div><a className="footer-brand" href="/">WisdomMedium</a><p>Thoughtful apps for everyday life.</p><small>© 2026 WisdomMedium</small></div>
     <nav aria-label="Footer navigation"><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></nav>
   </div></footer>;
 }
@@ -58,7 +58,7 @@ function Home() {
 
     <section id="apps" className="section apps-section"><div className="shell"><SectionHeading eyebrow="OUR APPS" title="Little tools for fuller days.">A growing collection of thoughtful apps to help life feel more organized.</SectionHeading><div className="app-grid">{apps.map(app => <AppCard key={app.slug} app={app} />)}</div></div></section>
 
-    <section id="about" className="section about-section"><div className="shell about-grid"><div><span className="eyebrow">ABOUT WISDOMMEDIUM</span><h2>Good tools should make space for life.</h2></div><div className="about-copy"><p>{operatorDescription}</p><p>WisdomMedium makes apps for the everyday things we all juggle: tasks, ideas, plans, and the thoughts worth keeping.</p><p>We aim for clear, comfortable experiences that help you focus on what matters to you.</p><a className="text-link" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></div></section>
+    <section id="about" className="section about-section"><div className="shell about-grid"><div><span className="eyebrow">ABOUT WISDOMMEDIUM</span><h2>Good tools should make space for life.</h2></div><div className="about-copy"><p>WisdomMedium is an independent app development brand creating thoughtful tools for everyday life.</p><p>WisdomMedium makes apps for the everyday things we all juggle: tasks, ideas, plans, and the thoughts worth keeping.</p><p>We aim for clear, comfortable experiences that help you focus on what matters to you.</p><a className="text-link" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></div></div></section>
   </>;
 }
 
