@@ -1,0 +1,30 @@
+import { AppLinks, operatorDescription } from './AppLegal';
+import { emailHref, site } from './site';
+
+function SupportContact({ name }: { name: string }) {
+  return <section><h2>Contact support</h2><p>{operatorDescription}</p><p>Email <a href={emailHref(site.email, `${name} Support`)}>{site.email}</a> for help, feedback or privacy requests. Include {name}, the version/build, device and operating-system version, what you expected, and what happened. Screenshots are optional; remove private content first. Do not send passwords, keys, full libraries or sensitive journal entries.</p><p>The link opens a draft in your mail app; you choose whether to send it. You can also copy the address into any email service.</p></section>;
+}
+
+export function PotatoSupportDetails() {
+  return <section id="potatobeans"><h2>PotatoBeans support</h2><p>For iPhone, iPad and native Mac, find the version/build in Settings → About. Tell support whether the library is local or has iCloud enabled, and include the displayed connection status. The Watch companion has its own account/device-library choice.</p><h3>Sync or missing content</h3><p>Keep the existing installation, original devices and recovery files. Do not reset a library or delete an iCloud container as a troubleshooting step. General sync is chosen separately on each installation. Turning it off does not delete uploaded records; quit and reopen the app for an existing mirroring connection to stop. Focus history is separate and transfers through explicit file import/export.</p><h3>Calendars and protected notes</h3><p>Check Calendar permission and your selected calendars if events do not appear. Linked Calendar events can remain after a task is deleted or the connection is removed. Calendar export coordination may use CloudKit even with general sync off. If protected writing will not open, preserve the original device and keys; support cannot reset a missing key. Read the <a href="/apps/potatobeans/privacy/">privacy policy</a> and <a href="/apps/potatobeans/terms/">terms</a> for retention and recovery limits.</p></section>;
+}
+
+export function StoriesSupportDetails() {
+  return <section id="my-stories"><h2>My Stories support</h2><p>My Stories is an iPhone app. Find its version in Settings → About. For an import issue, describe the file type and size without sending the private file; attachments are limited to 50 MiB each. Photo and file import uses your explicit selection.</p><h3>Missing or deleted journals</h3><p>Check Deleted Journals first. Entries remain there until you restore or permanently delete them; there is no automatic expiration. If Settings reports that cleanup needs another attempt, use its retry option. Keep your original installation and device when investigating missing content.</p><h3>Backups and protected entries</h3><p>This release does not automatically sync journals between devices. Device backup eligibility does not prove a current backup exists. Protected-entry keys are bound to the original device; a replacement-device restore can leave protected journals unreadable. Support cannot recreate a lost key or bypass authentication. Do not uninstall the app as a first troubleshooting step.</p><h3>Reminders and privacy</h3><p>If reminders are unavailable, check notification permission in iPhone Settings and the daily reminder setting in the app. Read the <a href="/apps/my-stories/privacy/">privacy policy</a> and <a href="/apps/my-stories/terms/">terms</a> for data handling and deletion limits.</p></section>;
+}
+
+export function PotatoSupportPage() {
+  return <><section className="page-hero shell"><span className="eyebrow">WISDOMMEDIUM SUPPORT</span><h1>PotatoBeans Support</h1><AppLinks slug="potatobeans" name="PotatoBeans" /></section><article className="shell prose-page"><SupportContact name="PotatoBeans" /><PotatoSupportDetails /></article></>;
+}
+
+export function StoriesSupportPage() {
+  return <><section className="page-hero shell"><span className="eyebrow">WISDOMMEDIUM SUPPORT</span><h1>My Stories Support</h1><AppLinks slug="my-stories" name="My Stories" /></section><article className="shell prose-page"><SupportContact name="My Stories" /><StoriesSupportDetails /></article></>;
+}
+
+export function PotatoProduct() {
+  return <><section className="page-hero shell"><span className="eyebrow">FOR IPHONE, IPAD AND MAC</span><h1>Meet <em>PotatoBeans.</em></h1><p className="lead">Tasks, notes and focus, with room for your day.</p><p>Organize your tasks into Beans, keep notes close, connect selected calendars and make time for focused work.</p><AppLinks slug="potatobeans" name="PotatoBeans" /></section><article className="shell prose-page"><h2>Your library, your choices</h2><p>Work locally or enable optional iCloud synchronization for eligible library content. Focus history stays local unless you explicitly transfer it by file. Apple Watch and widgets offer companion views; Calendar and cloud features have separate permissions and behaviors.</p><p>See the linked privacy, terms and support pages for details before enabling cloud or Calendar features. App Store availability and pricing will be shown in the store when published.</p></article></>;
+}
+
+export function StoriesProduct() {
+  return <><section className="page-hero shell"><span className="eyebrow">FOR IPHONE</span><h1>Meet <em>My Stories.</em></h1><p className="lead">A place for the moments you want to keep.</p><p>Write journals with rich text, photos, videos and selected files in a local iPhone library.</p><AppLinks slug="my-stories" name="My Stories" /></section><article className="shell prose-page"><h2>Personal writing, local storage</h2><p>No app account or automatic cloud synchronization. Ordinary journals can be included in device backups, and you can protect individual entries using device authentication and encryption.</p><p>Protection keys are tied to the original device. A backup alone does not guarantee access to protected entries on a replacement device. Read the privacy and support pages before relying on recovery. App Store availability and pricing will be shown in the store when published.</p></article></>;
+}

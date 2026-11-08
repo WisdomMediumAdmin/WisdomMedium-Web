@@ -18,7 +18,8 @@ function metadata(page: PageInfo) {
   const url = escapeHtml(canonicalUrl(page));
   return [
     `<meta name="description" content="${description}" />`,
-    page.page === 'notFound' ? '<meta name="robots" content="noindex" />' : `<link rel="canonical" href="${url}" />`,
+    page.page === 'notFound' ? '' : `<link rel="canonical" href="${url}" />`,
+    page.page === 'notFound' || page.legacy ? '<meta name="robots" content="noindex" />' : '',
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="${site.name}" />`,
     `<meta property="og:title" content="${title}" />`,

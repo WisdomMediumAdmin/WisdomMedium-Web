@@ -12,7 +12,7 @@ describe('site navigation and content', () => {
     expect(nav.querySelector('a[href="/#apps"]')).not.toBeNull();
     expect(nav.querySelector('a[href="/#about"]')).not.toBeNull();
     expect(nav.querySelector('a[href="/support/"]')).not.toBeNull();
-    expect(nav.querySelector('a[href="/contact/"]')).not.toBeNull();
+    expect(nav.querySelector('a[href="/privacy/"]')).not.toBeNull();
     expect(screen.getByRole('link', { name: 'WisdomMedium home' }).getAttribute('href')).toBe('/');
   });
 
@@ -41,11 +41,11 @@ describe('site navigation and content', () => {
   });
 
   it('shows coming soon until release and never adds a placeholder store link', () => {
-    render(<App path="/apps/wm-pebbles/" />);
-    expect(screen.getByText('Coming soon')).toBeTruthy();
+    render(<App path="/" />);
+    expect(screen.getAllByText('Coming soon')).toHaveLength(2);
     expect(screen.queryByRole('link', { name: /App Store/i })).toBeNull();
     expect(apps[0].release.status).toBe('coming-soon');
-    expect(appPath(apps[0])).toBe('/apps/wm-pebbles/');
+    expect(appPath(apps[0])).toBe('/apps/potatobeans/');
     const futureApp: AppInfo = { ...apps[0], release: { status: 'available', appStoreUrl: 'https://apps.apple.com/example' } };
     cleanup();
     render(<ReleaseAction app={futureApp} />);

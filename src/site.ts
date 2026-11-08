@@ -22,18 +22,9 @@ export type AppInfo = {
 
 export const apps: AppInfo[] = [
   {
-    slug: 'wm-pebbles',
-    name: 'WM Pebbles',
-    platform: 'iPhone',
-    summary: 'A calmer place for tasks, notes, and journals.',
-    description: 'Organize tasks into pebbles and keep your tasks, notes, and journals together in one thoughtful space.',
-    release: { status: 'coming-soon' },
-    privacyPolicyPath: '/privacy/'
-  },
-  {
     slug: 'potatobeans', name: 'PotatoBeans', platform: 'iPhone, iPad and Mac',
-    summary: 'Tasks, notes and focus, with room for your day.',
-    description: 'Organize tasks, keep notes and connect selected calendars, with optional iCloud for eligible library content.',
+    summary: 'Create Beans. Keep your tasks simple.',
+    description: 'Create, modify and delete Beans and their tasks, with optional iCloud sync.',
     release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/potatobeans/privacy/'
   },
   {

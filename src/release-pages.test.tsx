@@ -26,28 +26,52 @@ describe('release legal and support destinations', () => {
     expect(screen.getByText(/not a registered LLC or corporation/)).toBeTruthy();
   });
 
-  it('preserves existing app privacy sections', () => {
+  it('keeps the shared policy short and preserves the legacy destination', () => {
     render(<App path="/privacy/" />);
-    expect(screen.getByRole('heading', { name: 'WM Pebbles' })).toBeTruthy();
-    expect(screen.getByRole('heading', { name: 'SoapyMoney (iPhone, iPad and macOS)' })).toBeTruthy();
+    expect(screen.queryByText(/SoapyMoney/)).toBeNull();
+    expect(document.getElementById('wm-pebbles')).not.toBeNull();
+    expect(screen.getByRole('link', { name: 'WM Pebbles legacy privacy and support' }).getAttribute('href')).toBe('/apps/wm-pebbles/#privacy');
+    expect(document.querySelector('main')!.textContent!.split(/\s+/).length).toBeLessThan(450);
+    cleanup();
+    render(<App path="/apps/wm-pebbles/" />);
+    expect(screen.getByText(/is being retired/)).toBeTruthy();
+    expect(document.getElementById('privacy')).not.toBeNull();
+    expect(document.getElementById('support')).not.toBeNull();
+    expect(screen.queryByText('Coming soon')).toBeNull();
   });
 
-  it('distinguishes PotatoBeans cloud and deletion exceptions', () => {
+  it('discloses actual MVP cloud, completion records and retained data', () => {
     render(<App path="/apps/potatobeans/privacy/" />);
-    expect(screen.getByText(/even when general library sync is off/)).toBeTruthy();
-    expect(screen.getByText(/Focus history moves through explicit file import and export/)).toBeTruthy();
-    expect(screen.getByText(/Watch companion has its own account\/device-library selection/)).toBeTruthy();
-    expect(screen.getByText(/without age-based pruning/)).toBeTruthy();
-    expect(screen.getByText(/until you quit and reopen/)).toBeTruthy();
+    expect(screen.getByText(/Completing a task saves a completion record/)).toBeTruthy();
+    expect(screen.getByText(/iCloud sync starts off/)).toBeTruthy();
+    expect(screen.getByText(/Hiding those features does not delete their data/)).toBeTruthy();
+    expect(screen.getByText(/Earlier versions, conflict copies and deletion records/)).toBeTruthy();
+    expect(screen.getByText(/quit and reopen/)).toBeTruthy();
+    expect(document.querySelector('main')!.textContent!.split(/\s+/).length).toBeLessThan(600);
   });
 
-  it('explains My Stories backup, metadata and deletion limitations', () => {
+  it('explains My Stories backup, metadata and deletion limitations plainly', () => {
     render(<App path="/apps/my-stories/privacy/" />);
-    expect(screen.getByText(/not portable to a replacement device/)).toBeTruthy();
-    expect(screen.getByText(/There is no automatic expiration of Deleted Journals/)).toBeTruthy();
-    expect(screen.getByText(/does not deliberately strip that metadata/)).toBeTruthy();
-    expect(screen.getByText(/no app account, automatic CloudKit synchronization/)).toBeTruthy();
-    expect(screen.getByText(/Interrupted or unsafe cleanup is retried/)).toBeTruthy();
+    expect(screen.getByText(/restoring a backup on a replacement device may leave protected entries unreadable/)).toBeTruthy();
+    expect(screen.getByText(/there is no automatic expiration/)).toBeTruthy();
+    expect(screen.getByText(/embedded details such as location/)).toBeTruthy();
+    expect(screen.getByText(/no app account, automatic journal sync/)).toBeTruthy();
+    expect(screen.getByText(/retry option in Settings/)).toBeTruthy();
+    expect(document.querySelector('main')!.textContent!.split(/\s+/).length).toBeLessThan(650);
+    expect(document.querySelector('main')!.textContent).not.toMatch(/AES-GCM|SwiftData|Keychain|256-bit/);
+  });
+
+  it('removes obsolete release claims from public pages and metadata', () => {
+    for (const page of pages) {
+      const doc = new DOMParser().parseFromString(renderToString(<App path={page.path} />), 'text/html');
+      const copy = doc.body.textContent! + page.description;
+      expect(copy).not.toMatch(/SoapyMoney|Android|Google Play/);
+      if (page.page === 'home') expect(copy).not.toMatch(/WM Pebbles/);
+      if (page.path.includes('potatobeans')) {
+        expect(copy).not.toMatch(/Focus|Calendar|widgets|Watch companion|keep notes|protected writing/);
+      }
+      if (!page.legacy) expect(page.description).not.toMatch(/WM Pebbles|notes|streaks|Focus|Calendar/);
+    }
   });
 
   it('renders every route with one main heading and resolves all internal links and fragments in static HTML', () => {
