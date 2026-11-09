@@ -74,7 +74,7 @@
       "verified_value": "Native AlarmKit registration verified via system query; permission-only failure can use registered local notifications if alert/sound allowed. Notifications explicitly labeled lower reliability. Timer and test alarm require native authorization.",
       "status": "verified",
       "evidence": [
-        "Apple/CuckooAlarm/Services/NativeScheduler.swift",
+        "Apple/CuckooAlarm/Services/AlarmScheduler.swift",
         "Apple/CuckooAlarm/Services/NotificationAlarmScheduler.swift",
         "Apple/CuckooAlarm/Services/AlarmStore.swift"
       ],

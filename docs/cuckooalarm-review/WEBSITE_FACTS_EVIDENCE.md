@@ -48,7 +48,7 @@ Status: verified. Native AlarmKit registration verified via system query; permis
 
 Source and fake-backend tests verified; locked/Silent/Focus/force-quit speaker delivery pending by user instruction. Saved record alone never proves scheduled delivery.
 
-Evidence: Apple/CuckooAlarm/Services/NativeScheduler.swift; Apple/CuckooAlarm/Services/NotificationAlarmScheduler.swift; Apple/CuckooAlarm/Services/AlarmStore.swift
+Evidence: Apple/CuckooAlarm/Services/AlarmScheduler.swift; Apple/CuckooAlarm/Services/NotificationAlarmScheduler.swift; Apple/CuckooAlarm/Services/AlarmStore.swift
 
 ## audio_assets_rights
 
