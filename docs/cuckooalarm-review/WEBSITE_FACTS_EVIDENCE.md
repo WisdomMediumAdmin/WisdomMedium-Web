@@ -1,14 +1,16 @@
 # Website facts evidence
 
-Audited current app source at d1f35ba; no policy is approved for publication. Exact symbols/configurations and qualifiers are in the JSON.
+Audited app source: [1f035199ce0a8670281a63bd0695f811d55047bf](https://github.com/WisdomMediumAdmin/CuckooAlarm/commit/1f035199ce0a8670281a63bd0695f811d55047bf). All paths below refer to that app repository unless explicitly prefixed WisdomMedium-Web. No policy is approved for publication.
+
+Final signed Debug/Release binary details are in docs/Release/CuckooAlarm_2026-11-08_Execution/BINARY_AUDIT.json. Physical verification is explicitly deferred.
 
 ## platforms_supported
 
 Status: verified. iPhone, portrait, iOS 26.0 minimum; 1.0 (1); com.wisdommedium.alarm; Live Activity extension com.wisdommedium.alarm.widgets
 
-Compiled Debug simulator verified; final device Release binary audit follows in Stage 07. iOS 26 runtime/device coverage pending.
+Current signed Release and Debug iPhone builds passed using existing development credentials; BINARY_AUDIT.json verifies iPhone-only, portrait, iOS26, stable IDs and WeatherKit entitlement. No distribution release approval; iOS26 runtime/device coverage pending.
 
-Evidence: Apple/CuckooAlarm/Info.plist; Apple/CuckooAlarm.xcodeproj/project.pbxproj:661; Apple/build-execution-stage01/Build/Products/Debug-iphonesimulator/CuckooAlarm.app/Info.plist
+Evidence: Apple/CuckooAlarm/Info.plist; Apple/CuckooAlarm.xcodeproj/project.pbxproj:661; Apple/build-execution-stage01/Build/Products/Debug-iphonesimulator/CuckooAlarm.app/Info.plist; docs/Release/CuckooAlarm_2026-11-08_Execution/BINARY_AUDIT.json
 
 ## local_user_content
 
@@ -30,7 +32,7 @@ Evidence: Apple/CuckooAlarm/CuckooAlarmApp.swift:29; Apple/CuckooAlarm/Services/
 
 Status: verified. Optional when-in-use one-shot location, desired accuracy 3 km; rounded to 0.1 degree before persistence and Apple Weather request; recent coarse point reused for six hours. No continuous/background location mode.
 
-System may initially return a finer point, transient only. Rounding is not anonymity. Foreground return is local-only. Revocation clears cached point/forecast; physical permission checks pending.
+System may initially return a finer point, transient only. Rounding is not anonymity. Foreground return is local-only. Revocation clears cached point/forecast; physical permission checks pending. Final audit repair replaces coordinate-bearing refresh-history keys with a location-free timestamp on revocation; policy allowance remains intact.
 
 Evidence: Apple/CuckooAlarm/Services/WeatherService.swift:35; Apple/CuckooAlarm/Services/WeatherService.swift:65; Apple/CuckooAlarm/Services/WeatherService.swift:121; Apple/CuckooAlarm/Core/WeatherPolicy.swift:3
 
@@ -46,7 +48,7 @@ Evidence: Apple/CuckooAlarm/Services/WeatherService.swift:6; Apple/CuckooAlarm/S
 
 Status: verified. Native AlarmKit registration verified via system query; permission-only failure can use registered local notifications if alert/sound allowed. Notifications explicitly labeled lower reliability. Timer and test alarm require native authorization.
 
-Source and fake-backend tests verified; locked/Silent/Focus/force-quit speaker delivery pending by user instruction. Saved record alone never proves scheduled delivery.
+Source, fake-backend tests and actual API-confirmed simulator registration verified. stage07-ui-closeout.xcresult passed native authorization via public Settings, registration, locking/unlocking, cancellation and deletion. Locked/Silent/Focus/force-quit physical speaker delivery remains pending by user instruction. Saved record alone never proves scheduled delivery.
 
 Evidence: Apple/CuckooAlarm/Services/AlarmScheduler.swift; Apple/CuckooAlarm/Services/NotificationAlarmScheduler.swift; Apple/CuckooAlarm/Services/AlarmStore.swift
 

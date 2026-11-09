@@ -11,9 +11,10 @@
       "evidence": [
         "Apple/CuckooAlarm/Info.plist",
         "Apple/CuckooAlarm.xcodeproj/project.pbxproj:661",
-        "Apple/build-execution-stage01/Build/Products/Debug-iphonesimulator/CuckooAlarm.app/Info.plist"
+        "Apple/build-execution-stage01/Build/Products/Debug-iphonesimulator/CuckooAlarm.app/Info.plist",
+        "docs/Release/CuckooAlarm_2026-11-08_Execution/BINARY_AUDIT.json"
       ],
-      "notes": "Compiled Debug simulator verified; final device Release binary audit follows in Stage 07. iOS 26 runtime/device coverage pending."
+      "notes": "Current signed Release and Debug iPhone builds passed using existing development credentials; BINARY_AUDIT.json verifies iPhone-only, portrait, iOS26, stable IDs and WeatherKit entitlement. No distribution release approval; iOS26 runtime/device coverage pending."
     },
     {
       "key": "local_user_content",
@@ -53,7 +54,7 @@
         "Apple/CuckooAlarm/Services/WeatherService.swift:121",
         "Apple/CuckooAlarm/Core/WeatherPolicy.swift:3"
       ],
-      "notes": "System may initially return a finer point, transient only. Rounding is not anonymity. Foreground return is local-only. Revocation clears cached point/forecast; physical permission checks pending."
+      "notes": "System may initially return a finer point, transient only. Rounding is not anonymity. Foreground return is local-only. Revocation clears cached point/forecast; physical permission checks pending. Final audit repair replaces coordinate-bearing refresh-history keys with a location-free timestamp on revocation; policy allowance remains intact."
     },
     {
       "key": "weather_cache_retention",
@@ -78,7 +79,7 @@
         "Apple/CuckooAlarm/Services/NotificationAlarmScheduler.swift",
         "Apple/CuckooAlarm/Services/AlarmStore.swift"
       ],
-      "notes": "Source and fake-backend tests verified; locked/Silent/Focus/force-quit speaker delivery pending by user instruction. Saved record alone never proves scheduled delivery."
+      "notes": "Source, fake-backend tests and actual API-confirmed simulator registration verified. stage07-ui-closeout.xcresult passed native authorization via public Settings, registration, locking/unlocking, cancellation and deletion. Locked/Silent/Focus/force-quit physical speaker delivery remains pending by user instruction. Saved record alone never proves scheduled delivery."
     },
     {
       "key": "audio_assets_rights",
@@ -159,6 +160,6 @@
       "notes": "Unpublished app. No genuine ID/URL provided or invented; review/share unavailable alert retained."
     }
   ],
-  "source_commit": "d1f35ba",
+  "source_commit": "1f035199ce0a8670281a63bd0695f811d55047bf",
   "public_release": false
 }
