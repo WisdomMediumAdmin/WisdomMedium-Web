@@ -80,7 +80,7 @@ export function StoriesTerms() {
 }
 
 export function Terms() {
-  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · TERMS</span><h1>Terms of Use</h1><LegalDate /><nav className="legal-links" aria-label="Terms sections"><a href="#general">General terms</a><a href="/apps/potatobeans/terms/">PotatoBeans</a><a href="/apps/my-stories/terms/">My Stories</a></nav></section><article className="shell prose-page privacy-policy"><GeneralTerms /><PotatoTerms /><StoriesTerms /></article></>;
+  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · TERMS</span><h1>Terms of Use</h1><LegalDate /><nav className="legal-links" aria-label="Terms sections"><a href="#general">General terms</a><a href="/apps/potatobeans/terms/">PotatoBeans</a><a href="/apps/my-stories/terms/">My Stories</a><a href="/apps/cuckooalarm/terms/">CuckooAlarm (draft)</a></nav></section><article className="shell prose-page privacy-policy"><GeneralTerms /><PotatoTerms /><StoriesTerms /></article></>;
 }
 
 export function PotatoPrivacyPage() { return <LegalPage title="PotatoBeans Privacy Policy" slug="potatobeans" name="PotatoBeans"><PotatoPrivacy /><AppPrivacyContact /></LegalPage>; }

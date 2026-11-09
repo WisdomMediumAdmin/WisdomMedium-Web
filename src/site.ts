@@ -34,6 +34,13 @@ export const apps: AppInfo[] = [
     description: 'Keep a local journal with rich text, photos, videos and selected files on your iPhone.',
     release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/my-stories/privacy/',
     iconPath: '/images/apps/my-stories-512.webp'
+  },
+  {
+    slug: 'cuckooalarm', name: 'CuckooAlarm', platform: 'iPhone',
+    summary: 'Alarms, a stopwatch and a timer. One simple place.',
+    description: 'Local alarms, original sounds and optional Apple Weather forecasts.',
+    release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/cuckooalarm/privacy/',
+    iconPath: '/images/apps/cuckooalarm-512.webp'
   }
 ];
 
