@@ -3,13 +3,14 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { App } from './App';
 import { pageForPath } from './routes';
 afterEach(cleanup);
-it('renders all four review routes with one heading and no fictional listing', () => {
+it('renders all four published routes with one heading and no fictional listing', () => {
   for (const suffix of ['', 'privacy/', 'terms/', 'support/']) {
     const path = `/apps/cuckooalarm/${suffix}`;
     render(<App path={path} />);
     expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
-    expect(screen.getByText(/Review draft ·/)).toBeTruthy();
-    expect(pageForPath(path).draft).toBe(true);
+    expect(screen.getByText(/Effective and last updated:/)).toBeTruthy();
+    expect(screen.queryByText(/Review draft|approval.*pending|unpublished/i)).toBeNull();
+    expect(pageForPath(path).draft).not.toBe(true);
     expect(document.querySelector('a[href*="apps.apple.com"]')).toBeNull();
     expect(document.querySelector('a[href="/apps/cuckooalarm/privacy/"]')).toBeTruthy();
     cleanup();

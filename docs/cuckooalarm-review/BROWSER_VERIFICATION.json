@@ -1,0 +1,114 @@
+[
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 390,
+    "heading": "Meet CuckooAlarm.",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/",
+    "width": 390
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 390,
+    "heading": "CuckooAlarm Privacy Policy",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/privacy/",
+    "width": 390
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 390,
+    "heading": "CuckooAlarm Terms of Use",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/terms/",
+    "width": 390
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 390,
+    "heading": "CuckooAlarm Support",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/support/",
+    "width": 390
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 1440,
+    "heading": "Meet CuckooAlarm.",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/",
+    "width": 1440
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 1440,
+    "heading": "CuckooAlarm Privacy Policy",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/privacy/",
+    "width": 1440
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 1440,
+    "heading": "CuckooAlarm Terms of Use",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/terms/",
+    "width": 1440
+  },
+  {
+    "date": "November 9, 2026",
+    "documentWidth": 1440,
+    "heading": "CuckooAlarm Support",
+    "images": true,
+    "links": [
+      "/apps/cuckooalarm/",
+      "/apps/cuckooalarm/privacy/",
+      "/apps/cuckooalarm/terms/",
+      "/apps/cuckooalarm/support/"
+    ],
+    "url": "http://127.0.0.1:4186/apps/cuckooalarm/support/",
+    "width": 1440
+  }
+]

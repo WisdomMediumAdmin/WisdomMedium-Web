@@ -1,0 +1,44 @@
+{
+  "baseCommit": "3b30b72fb2f93a70c0509e27ab566e2b299b0847",
+  "existingPageBodiesByteIdentical": [
+    "/apps/potatobeans/",
+    "/apps/potatobeans/privacy/",
+    "/apps/potatobeans/terms/",
+    "/apps/potatobeans/support/",
+    "/apps/my-stories/",
+    "/apps/my-stories/privacy/",
+    "/apps/my-stories/terms/",
+    "/apps/my-stories/support/",
+    "/apps/wm-pebbles/"
+  ],
+  "pages": [
+    {
+      "path": "/apps/cuckooalarm/",
+      "canonical": "https://wisdommedium.com/apps/cuckooalarm/",
+      "indexable": true,
+      "sitemap": true,
+      "localLinks": true
+    },
+    {
+      "path": "/apps/cuckooalarm/privacy/",
+      "canonical": "https://wisdommedium.com/apps/cuckooalarm/privacy/",
+      "indexable": true,
+      "sitemap": true,
+      "localLinks": true
+    },
+    {
+      "path": "/apps/cuckooalarm/terms/",
+      "canonical": "https://wisdommedium.com/apps/cuckooalarm/terms/",
+      "indexable": true,
+      "sitemap": true,
+      "localLinks": true
+    },
+    {
+      "path": "/apps/cuckooalarm/support/",
+      "canonical": "https://wisdommedium.com/apps/cuckooalarm/support/",
+      "indexable": true,
+      "sitemap": true,
+      "localLinks": true
+    }
+  ]
+}

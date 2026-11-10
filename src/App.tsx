@@ -102,7 +102,7 @@ function Contact() {
 }
 
 function Privacy() {
-  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · PRIVACY</span><h1>Privacy <em>Policy</em></h1><LegalDate /><p className="lead">Read how your app stores information and how to manage it.</p><nav className="legal-links" aria-label="App privacy policies"><a id="potatobeans" href="/apps/potatobeans/privacy/">PotatoBeans Privacy Policy</a><a id="my-stories" href="/apps/my-stories/privacy/">My Stories Privacy Policy</a><a href="/apps/cuckooalarm/privacy/">CuckooAlarm Privacy Policy (draft)</a></nav></section><article className="shell prose-page privacy-policy"><SharedPrivacy /><p className="small-note" id="wm-pebbles">Existing installations: <a href="/apps/wm-pebbles/#privacy">WM Pebbles legacy privacy and support</a>.</p></article></>;
+  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · PRIVACY</span><h1>Privacy <em>Policy</em></h1><LegalDate /><p className="lead">Read how your app stores information and how to manage it.</p><nav className="legal-links" aria-label="App privacy policies"><a id="potatobeans" href="/apps/potatobeans/privacy/">PotatoBeans Privacy Policy</a><a id="my-stories" href="/apps/my-stories/privacy/">My Stories Privacy Policy</a><a href="/apps/cuckooalarm/privacy/">CuckooAlarm Privacy Policy</a></nav></section><article className="shell prose-page privacy-policy"><SharedPrivacy /><p className="small-note" id="wm-pebbles">Existing installations: <a href="/apps/wm-pebbles/#privacy">WM Pebbles legacy privacy and support</a>.</p></article></>;
 }
 
 function NotFound() {

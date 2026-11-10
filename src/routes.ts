@@ -19,10 +19,10 @@ export const pages: PageInfo[] = [
   { page: 'storiesTerms', path: '/apps/my-stories/terms/', title: 'My Stories Terms of Use | WisdomMedium', description: 'Terms for My Stories on iPhone, including app licensing, local journals, backups and protection limits.' },
   { page: 'potatoSupport', path: '/apps/potatobeans/support/', title: 'PotatoBeans Support | WisdomMedium', description: 'Contact PotatoBeans support for help with Beans, tasks, storage and optional iCloud.' },
   { page: 'storiesSupport', path: '/apps/my-stories/support/', title: 'My Stories Support | WisdomMedium', description: 'Contact My Stories support for help with journal imports, deletion, device backups and protected entries.' },
-  { page: 'cuckoo', path: '/apps/cuckooalarm/', title: 'CuckooAlarm for iPhone | WisdomMedium', description: 'Coming soon: local alarms, stopwatch, timer and optional Apple Weather forecasts for iPhone.', draft: true },
-  { page: 'cuckooPrivacy', path: '/apps/cuckooalarm/privacy/', title: 'CuckooAlarm Privacy Policy | WisdomMedium', description: 'Review draft: local timing data, optional location, Apple Weather, retention and deletion.', draft: true },
-  { page: 'cuckooTerms', path: '/apps/cuckooalarm/terms/', title: 'CuckooAlarm Terms of Use | WisdomMedium', description: 'Review draft: app license, alarm reliability, weather and legal rights.', draft: true },
-  { page: 'cuckooSupport', path: '/apps/cuckooalarm/support/', title: 'CuckooAlarm Support | WisdomMedium', description: 'CuckooAlarm permissions, weather, local data and feedback guidance.', draft: true }
+  { page: 'cuckoo', path: '/apps/cuckooalarm/', title: 'CuckooAlarm for iPhone | WisdomMedium', description: 'Coming soon: local alarms, stopwatch, timer and optional Apple Weather forecasts for iPhone.' },
+  { page: 'cuckooPrivacy', path: '/apps/cuckooalarm/privacy/', title: 'CuckooAlarm Privacy Policy | WisdomMedium', description: 'Local timing data, optional location, Apple Weather, retention and deletion.' },
+  { page: 'cuckooTerms', path: '/apps/cuckooalarm/terms/', title: 'CuckooAlarm Terms of Use | WisdomMedium', description: 'App license, alarm reliability, weather and legal rights.' },
+  { page: 'cuckooSupport', path: '/apps/cuckooalarm/support/', title: 'CuckooAlarm Support | WisdomMedium', description: 'CuckooAlarm permissions, weather, local data and feedback guidance.' }
 ];
 
 export const notFound: PageInfo = {
