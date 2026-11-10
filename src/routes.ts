@@ -1,8 +1,8 @@
 import { site } from './site';
 
-export type Page = 'home' | 'pebbles' | 'support' | 'contact' | 'privacy' | 'terms' | 'potato' | 'stories' | 'potatoPrivacy' | 'storiesPrivacy' | 'potatoTerms' | 'storiesTerms' | 'potatoSupport' | 'storiesSupport' | 'notFound';
+export type Page = 'home' | 'pebbles' | 'support' | 'contact' | 'privacy' | 'terms' | 'potato' | 'stories' | 'potatoPrivacy' | 'storiesPrivacy' | 'potatoTerms' | 'storiesTerms' | 'potatoSupport' | 'storiesSupport' | 'cuckoo' | 'cuckooPrivacy' | 'cuckooTerms' | 'cuckooSupport' | 'notFound';
 
-export type PageInfo = { page: Page; path: string; title: string; description: string; legacy?: boolean };
+export type PageInfo = { page: Page; path: string; title: string; description: string; legacy?: boolean; draft?: boolean };
 
 export const pages: PageInfo[] = [
   { page: 'home', path: '/', title: 'WisdomMedium | Thoughtful apps for everyday life', description: 'WisdomMedium makes thoughtful apps for everyday organization and productivity.' },
@@ -18,7 +18,11 @@ export const pages: PageInfo[] = [
   { page: 'potatoTerms', path: '/apps/potatobeans/terms/', title: 'PotatoBeans Terms of Use | WisdomMedium', description: 'Terms for PotatoBeans, including app licensing, user content, cloud services and recovery limits.' },
   { page: 'storiesTerms', path: '/apps/my-stories/terms/', title: 'My Stories Terms of Use | WisdomMedium', description: 'Terms for My Stories on iPhone, including app licensing, local journals, backups and protection limits.' },
   { page: 'potatoSupport', path: '/apps/potatobeans/support/', title: 'PotatoBeans Support | WisdomMedium', description: 'Contact PotatoBeans support for help with Beans, tasks, storage and optional iCloud.' },
-  { page: 'storiesSupport', path: '/apps/my-stories/support/', title: 'My Stories Support | WisdomMedium', description: 'Contact My Stories support for help with journal imports, deletion, device backups and protected entries.' }
+  { page: 'storiesSupport', path: '/apps/my-stories/support/', title: 'My Stories Support | WisdomMedium', description: 'Contact My Stories support for help with journal imports, deletion, device backups and protected entries.' },
+  { page: 'cuckoo', path: '/apps/cuckooalarm/', title: 'CuckooAlarm for iPhone | WisdomMedium', description: 'Coming soon: local alarms, stopwatch, timer and optional Apple Weather forecasts for iPhone.' },
+  { page: 'cuckooPrivacy', path: '/apps/cuckooalarm/privacy/', title: 'CuckooAlarm Privacy Policy | WisdomMedium', description: 'Local timing data, optional location, Apple Weather, retention and deletion.' },
+  { page: 'cuckooTerms', path: '/apps/cuckooalarm/terms/', title: 'CuckooAlarm Terms of Use | WisdomMedium', description: 'App license, alarm reliability, weather and legal rights.' },
+  { page: 'cuckooSupport', path: '/apps/cuckooalarm/support/', title: 'CuckooAlarm Support | WisdomMedium', description: 'CuckooAlarm permissions, weather, local data and feedback guidance.' }
 ];
 
 export const notFound: PageInfo = {

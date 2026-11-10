@@ -16,6 +16,8 @@ The public app and support website for WisdomMedium. It is built with React, Typ
 | `/apps/my-stories/` | My Stories product page |
 | `/apps/potatobeans/{privacy,terms,support}/` | Dedicated PotatoBeans pages |
 | `/apps/my-stories/{privacy,terms,support}/` | Dedicated My Stories pages |
+| `/apps/cuckooalarm/` | CuckooAlarm product page |
+| `/apps/cuckooalarm/{privacy,terms,support}/` | Published CuckooAlarm policy and support pages |
 | `/404.html` | Not-found page |
 
 The public support address is `support@wisdommedium.com`.
@@ -52,3 +54,5 @@ The GitHub Actions workflow in `.github/workflows/deploy.yml` checks and builds 
 WisdomMedium is an independent brand operated by an individual, not a registered LLC or corporation. App-specific copy follows the app-project reports identified in [WEBSITE_AUDIT.md](WEBSITE_AUDIT.md). That audit records missing owner facts; public URLs alone do not establish full App Store readiness.
 
 Shared legal destinations remain `/privacy/` and `/terms/` because both apps already link there. Dedicated app pages reuse the same policy components in `src/AppLegal.tsx`; app support and product copy are in `src/ReleaseApps.tsx`. No app source changes are needed for the existing shared URLs.
+
+CuckooAlarm publication evidence and source review: [publication review](docs/cuckooalarm-review/REVIEW.md).

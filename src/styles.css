@@ -994,3 +994,5 @@ button {
   .primary-nav { justify-content:flex-start; gap:4px 20px; }
   .page-hero h1 { overflow-wrap:anywhere; }
 }
+
+.app-art--cuckooalarm { background: #f6dfbf; }

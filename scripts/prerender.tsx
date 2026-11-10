@@ -19,7 +19,7 @@ function metadata(page: PageInfo) {
   return [
     `<meta name="description" content="${description}" />`,
     page.page === 'notFound' ? '' : `<link rel="canonical" href="${url}" />`,
-    page.page === 'notFound' || page.legacy ? '<meta name="robots" content="noindex" />' : '',
+    page.page === 'notFound' || page.legacy || page.draft ? '<meta name="robots" content="noindex" />' : '',
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="${site.name}" />`,
     `<meta property="og:title" content="${title}" />`,
