@@ -62,7 +62,7 @@ describe('release legal and support destinations', () => {
 
   it('keeps the shared website section short and preserves the legacy destination', () => {
     render(<App path="/privacy/" />);
-    expect(screen.queryByText(/SoapyMoney/)).toBeNull();
+    expect(screen.getByRole('link', { name: 'SoapyMoney Privacy Policy' }).getAttribute('href')).toBe('/privacy/soapymoney/');
     expect(document.getElementById('wm-pebbles')).not.toBeNull();
     expect(screen.getByRole('link', { name: 'WM Pebbles legacy privacy and support' }).getAttribute('href')).toBe('/apps/wm-pebbles/#privacy');
     expect(document.getElementById('website-and-support')!.textContent!.split(/\s+/).length).toBeLessThan(450);
@@ -99,7 +99,7 @@ describe('release legal and support destinations', () => {
     for (const page of pages) {
       const doc = new DOMParser().parseFromString(renderToString(<App path={page.path} />), 'text/html');
       const copy = doc.body.textContent! + page.description;
-      expect(copy).not.toMatch(/SoapyMoney|Android|Google Play|not a registered LLC or corporation/);
+      expect(copy).not.toMatch(/Android|Google Play|not a registered LLC or corporation/);
       if (page.page === 'home') {
         expect(copy).not.toMatch(/Kazi Ahmed Siam/);
         expect(doc.getElementById('about')?.textContent).toContain('independent app development brand');

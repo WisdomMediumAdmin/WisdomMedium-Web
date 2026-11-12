@@ -1,16 +1,16 @@
-import { appPath, mochigoals, site, smoothcalc } from './site';
+import { appPath, mochigoals, site, smoothcalc, soapymoney } from './site';
 
-export type Page = 'home' | 'pebbles' | 'support' | 'contact' | 'privacy' | 'terms' | 'potato' | 'stories' | 'potatoPrivacy' | 'storiesPrivacy' | 'potatoTerms' | 'storiesTerms' | 'potatoSupport' | 'storiesSupport' | 'smoothcalc' | 'smoothcalcPrivacy' | 'smoothcalcTerms' | 'smoothcalcSupport' | 'mochi' | 'walkmallow' | 'cuckoo' | 'cuckooPrivacy' | 'cuckooTerms' | 'cuckooSupport' | 'notFound';
+export type Page = 'home' | 'pebbles' | 'support' | 'contact' | 'privacy' | 'terms' | 'potato' | 'stories' | 'potatoPrivacy' | 'storiesPrivacy' | 'potatoTerms' | 'storiesTerms' | 'potatoSupport' | 'storiesSupport' | 'smoothcalc' | 'smoothcalcPrivacy' | 'smoothcalcTerms' | 'smoothcalcSupport' | 'soapymoney' | 'soapymoneyPrivacy' | 'soapymoneyTerms' | 'soapymoneySupport' | 'mochi' | 'walkmallow' | 'cuckoo' | 'cuckooPrivacy' | 'cuckooTerms' | 'cuckooSupport' | 'notFound';
 
 export type PageInfo = { page: Page; path: string; title: string; description: string; legacy?: boolean; draft?: boolean };
 
 export const pages: PageInfo[] = [
   { page: 'home', path: '/', title: 'WisdomMedium | Thoughtful apps for everyday life', description: 'WisdomMedium makes thoughtful apps for everyday organization and productivity.' },
   { page: 'pebbles', path: '/apps/wm-pebbles/', title: 'WM Pebbles Legacy Privacy and Support | WisdomMedium', description: 'Privacy and support information for existing installations of the retired WM Pebbles app.', legacy: true },
-  { page: 'support', path: '/support/', title: 'Support | WisdomMedium', description: `Get help with PotatoBeans, My Stories, CuckooAlarm, Walkmallow, ${smoothcalc.name} and MochiGoals. Contact WisdomMedium support.` },
+  { page: 'support', path: '/support/', title: 'Support | WisdomMedium', description: `Get help with PotatoBeans, My Stories, CuckooAlarm, Walkmallow, ${smoothcalc.name}, MochiGoals and ${soapymoney.name}. Contact WisdomMedium support.` },
   { page: 'contact', path: '/contact/', title: 'Contact | WisdomMedium', description: 'Contact WisdomMedium for questions about our apps, support, or anything you would like to share.' },
-  { page: 'privacy', path: '/privacy/', title: 'Privacy Policy | WisdomMedium', description: `App-specific privacy policies for PotatoBeans, My Stories, CuckooAlarm, Walkmallow, ${smoothcalc.name} and MochiGoals, plus website and support privacy.` },
-  { page: 'terms', path: '/terms/', title: 'Terms of Use | WisdomMedium', description: `General WisdomMedium terms and app-specific terms for PotatoBeans, My Stories, CuckooAlarm, Walkmallow, ${smoothcalc.name} and MochiGoals.` },
+  { page: 'privacy', path: '/privacy/', title: 'Privacy Policy | WisdomMedium', description: `App-specific privacy policies for PotatoBeans, My Stories, CuckooAlarm, Walkmallow, ${smoothcalc.name}, MochiGoals and ${soapymoney.name}, plus website and support privacy.` },
+  { page: 'terms', path: '/terms/', title: 'Terms of Use | WisdomMedium', description: `General WisdomMedium terms and app-specific terms for PotatoBeans, My Stories, CuckooAlarm, Walkmallow, ${smoothcalc.name}, MochiGoals and ${soapymoney.name}.` },
   { page: 'potato', path: '/apps/potatobeans/', title: 'PotatoBeans | WisdomMedium', description: 'Create, modify and delete Beans and their tasks. Find app privacy, terms and support.' },
   { page: 'stories', path: '/apps/my-stories/', title: 'My Stories for iPhone | WisdomMedium', description: 'My Stories is a local iPhone journaling app. Find privacy, terms and support.' },
   { page: 'potatoPrivacy', path: '/apps/potatobeans/privacy/', title: 'PotatoBeans Privacy Policy | WisdomMedium', description: 'PotatoBeans local storage, optional iCloud, retained data and deletion.' },
@@ -23,6 +23,10 @@ export const pages: PageInfo[] = [
   { page: 'smoothcalcPrivacy', path: smoothcalc.privacyPolicyPath, title: `${smoothcalc.name} Privacy Policy | WisdomMedium`, description: `How ${smoothcalc.name} handles local calculations, history, graphs, preferences, backups and deletion on iPhone.` },
   { page: 'smoothcalcTerms', path: smoothcalc.termsPath, title: `${smoothcalc.name} Terms of Use | WisdomMedium`, description: `Terms for using ${smoothcalc.name} on iPhone, including calculation accuracy, graph estimates and your App Store license.` },
   { page: 'smoothcalcSupport', path: smoothcalc.supportPath, title: `${smoothcalc.name} Support | WisdomMedium`, description: `Get help with ${smoothcalc.name} calculator modes, angle units, history, storage and reset on iPhone.` },
+  { page: 'soapymoney', path: appPath(soapymoney), title: `${soapymoney.name} for iPhone | WisdomMedium`, description: soapymoney.summary },
+  { page: 'soapymoneyPrivacy', path: soapymoney.privacyPolicyPath, title: `${soapymoney.name} Privacy Policy | WisdomMedium`, description: 'Learn how your expenses stay on your iPhone, how backups and deletion work, and what happens when you contact support.' },
+  { page: 'soapymoneyTerms', path: soapymoney.termsPath, title: `${soapymoney.name} Terms of Use | WisdomMedium`, description: 'Terms for personal expense tracking, estimated costs, financial records and your App Store license.' },
+  { page: 'soapymoneySupport', path: soapymoney.supportPath, title: `${soapymoney.name} Support | WisdomMedium`, description: 'Get help with expense categories, payments, currency filters, iPhone storage, deletion and privacy.' },
   { page: 'mochi', path: appPath(mochigoals), title: 'MochiGoals for iPhone | WisdomMedium', description: 'Plan goals, organize checklists and track progress on your iPhone. Explore MochiGoals screenshots, privacy, terms and support.' },
   { page: 'walkmallow', path: '/apps/walkmallow/', title: 'Walkmallow for iPhone | WisdomMedium', description: 'Track daily steps, choose an animated companion and explore illustrated New York City walks. Find Walkmallow privacy, terms and support.' },
   { page: 'cuckoo', path: '/apps/cuckooalarm/', title: 'CuckooAlarm for iPhone | WisdomMedium', description: 'Coming soon: local alarms, stopwatch, timer and optional Apple Weather forecasts for iPhone.' },

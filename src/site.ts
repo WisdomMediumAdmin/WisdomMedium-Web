@@ -13,6 +13,7 @@ export type AppInfo = {
   slug: string;
   name: string;
   platform: string;
+  tagline?: string;
   summary: string;
   description: string;
   release: AppRelease;
@@ -55,6 +56,25 @@ export const mochigoals: AppInfo = {
   storeName: 'the App Store for iPhone', release: { status: 'coming-soon' }
 };
 
+export const soapymoney = {
+  slug: 'soapymoney', name: 'SoapyMoney', platform: 'iPhone', version: '1.0', minimumOS: 'iOS 18.6',
+  tagline: 'Scrub Away Your Spending Habits.',
+  summary: 'See what your recurring expenses and one-time purchases cost per day, week, two weeks, month or year.',
+  description: 'Organize your expenses into categories. Give a recurring bill a schedule or spread a purchase over its useful life. Record payments and refunds in Recent Transactions, then open Report to compare your estimates with the cash you recorded.',
+  iconPath: '/images/apps/soapymoney-512.webp',
+  storeName: 'the App Store for iPhone',
+  release: { status: 'coming-soon' } satisfies AppRelease,
+  privacyPolicyPath: '/privacy/soapymoney/',
+  termsPath: '/terms/soapymoney/',
+  supportPath: '/support/soapymoney/',
+  screenshots: [
+    { file: 'cost-tracker', caption: 'Cost Tracker', alt: 'Estimated monthly costs broken down by category, including essentials, devices, food and subscriptions.' },
+    { file: 'category', caption: 'Expense categories', alt: 'The Essentials category lists monthly estimates for rent, internet and insurance.' },
+    { file: 'recent-transactions', caption: 'Recent Transactions', alt: 'Recorded payments for groceries, coffee, a computer and rent within a selected date range.' },
+    { file: 'report', caption: 'Report', alt: 'A 30-day report shows a daily-equivalent estimated cost of $70 and a bar chart of daily values.' }
+  ]
+};
+
 export const apps: AppInfo[] = [
   {
     slug: 'potatobeans', name: 'PotatoBeans', platform: 'iPhone, iPad and Mac',
@@ -79,7 +99,8 @@ export const apps: AppInfo[] = [
   },
   walkmallow,
   smoothcalc,
-  mochigoals
+  mochigoals,
+  soapymoney
 ];
 
 export const appPath = (app: AppInfo) => `/apps/${app.slug}/`;

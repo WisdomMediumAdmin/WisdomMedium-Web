@@ -1,4 +1,5 @@
 import { MochiLinks, MochiProduct, MochiPrivacy, MochiSupport } from './MochiGoals';
+import { SoapyMoneyProduct, SoapyMoneyPrivacy, SoapyMoneyTerms, SoapyMoneySupport } from './SoapyMoney';
 import { SmoothCalcProduct, SmoothCalcPrivacy, SmoothCalcTerms, SmoothCalcSupport } from './SmoothCalc';
 import { ButtonLink, ReleaseAction } from './ReleaseAction';
 import { WalkmallowProduct, WalkmallowPrivacy, WalkmallowSupport, walkmallowPolicyDate } from './Walkmallow';
@@ -7,7 +8,7 @@ import { CuckooProduct, CuckooPrivacy, CuckooTerms, CuckooSupport } from './Cuck
 import { LegalDate, brandOperator, SharedPrivacy, Terms, PotatoPrivacyPage, StoriesPrivacyPage, PotatoTermsPage, StoriesTermsPage } from './AppLegal';
 import { PotatoProduct, StoriesProduct, PotatoSupportPage, StoriesSupportPage } from './ReleaseApps';
 import { useState } from 'react';
-import { appPath, apps, emailHref, mochigoals, site, smoothcalc, type AppInfo } from './site';
+import { appPath, apps, emailHref, mochigoals, site, smoothcalc, soapymoney, type AppInfo } from './site';
 import { pageForPath, type Page } from './routes';
 import { AppIcon } from './AppIcon';
 
@@ -39,7 +40,7 @@ function AppCard({ app }: { app: AppInfo }) {
   return <article className="app-card">
     <div className={`app-card-art app-art--${app.slug}`}><AppIcon app={app} /></div>
     <div className="app-card-copy"><div className="app-card-top"><span className="eyebrow">For {app.platform}</span><ReleaseAction app={app} /></div>
-      <h3>{app.name}</h3><p>{app.summary}</p><a className="text-link" href={appPath(app)}>Explore {app.name}<span aria-hidden="true">↗</span></a>
+      <h3>{app.name}</h3>{app.tagline && <p><strong>{app.tagline}</strong></p>}<p>{app.summary}</p><a className="text-link" href={appPath(app)}>Explore {app.name}<span aria-hidden="true">↗</span></a>
       {app.slug === mochigoals.slug && <MochiLinks />}
     </div>
   </article>;
@@ -77,9 +78,9 @@ export function CopyEmailButton({ email }: { email: string }) {
 
 function Support() {
   return <>
-    <section className="page-hero shell support-hero"><div><span className="eyebrow">WISDOMMEDIUM · APP SUPPORT</span><h1>How can we <em>help?</em></h1><p className="lead">Need help with PotatoBeans, My Stories, CuckooAlarm, Walkmallow, {smoothcalc.name} or MochiGoals, found a bug, or have an idea to share? Contact us and include a few details so we can understand the issue.</p></div></section>
+    <section className="page-hero shell support-hero"><div><span className="eyebrow">WISDOMMEDIUM · APP SUPPORT</span><h1>How can we <em>help?</em></h1><p className="lead">Need help with PotatoBeans, My Stories, CuckooAlarm, Walkmallow, {smoothcalc.name}, MochiGoals or {soapymoney.name}, found a bug, or have an idea to share? Contact us and include a few details so we can understand the issue.</p></div></section>
     <section className="shell support-main"><div className="support-contact"><span className="eyebrow">EMAIL SUPPORT</span><p>Support and privacy contact for Kazi Ahmed Siam, operating as WisdomMedium.</p><h2>Let’s figure it out together.</h2><p className="email-display">{site.email}</p><div className="actions"><ButtonLink href={emailHref(site.email, 'WisdomMedium App Support')}>Email support</ButtonLink><CopyEmailButton email={site.email} /></div><p className="small-note">Email opens in your mail app. You can also copy the address and write from any email service.</p></div><div className="support-tips"><h2>What to include</h2><p>A few details help us understand what happened:</p><ul><li>The app name and version</li><li>Your device model and iOS, iPadOS or macOS version</li><li>What you expected and what happened instead</li></ul><p>Screenshots are optional. Please remove sensitive information before sending them. Do not send passwords, payment information, or private notes.</p></div></section>
-    <div className="shell prose-page"><nav className="legal-links" aria-label="App support pages"><a id="potatobeans" href="/apps/potatobeans/support/">PotatoBeans support page</a><a id="my-stories" href="/apps/my-stories/support/">My Stories support page</a><a href="/apps/cuckooalarm/support/">CuckooAlarm support page</a><a href="#walkmallow">Walkmallow support</a><a href={smoothcalc.supportPath}>{smoothcalc.name} support</a><a href="#mochigoals">MochiGoals support</a></nav>
+    <div className="shell prose-page"><nav className="legal-links" aria-label="App support pages"><a id="potatobeans" href="/apps/potatobeans/support/">PotatoBeans support page</a><a id="my-stories" href="/apps/my-stories/support/">My Stories support page</a><a href="/apps/cuckooalarm/support/">CuckooAlarm support page</a><a href="#walkmallow">Walkmallow support</a><a href={smoothcalc.supportPath}>{smoothcalc.name} support</a><a href="#mochigoals">MochiGoals support</a><a href={soapymoney.supportPath}>{soapymoney.name} support</a></nav>
       <WalkmallowSupport /><MochiSupport /><p className="small-note" id="wm-pebbles">For a retired installation, visit <a href="/apps/wm-pebbles/#support">legacy WM Pebbles support</a>.</p></div>
     <section className="section support-topics"><div className="shell topic-grid"><article><span className="topic-number">01</span><h2>Found a bug?</h2><p>Tell us what happened and, if you can, the steps that led to it. We’ll use those details to investigate.</p><a className="text-link" href={emailHref(site.email, 'WisdomMedium Bug Report')}>Report a bug <span aria-hidden="true">↗</span></a></article><article><span className="topic-number">02</span><h2>Have an idea?</h2><p>We welcome thoughtful suggestions. Tell us what you’d like to do and how it would help.</p><a className="text-link" href={emailHref(site.email, 'WisdomMedium Feature Suggestion')}>Suggest a feature <span aria-hidden="true">↗</span></a></article></div></section>
   </>;
@@ -98,14 +99,14 @@ function Contact() {
 }
 
 function Privacy() {
-  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · PRIVACY</span><h1>Privacy <em>Policy</em></h1><LegalDate date={walkmallowPolicyDate} /><p className="lead">Read how your app stores information and how to manage it.</p><nav className="legal-links" aria-label="App privacy policies"><a id="potatobeans" href="/apps/potatobeans/privacy/">PotatoBeans Privacy Policy</a><a id="my-stories" href="/apps/my-stories/privacy/">My Stories Privacy Policy</a><a href="/apps/cuckooalarm/privacy/">CuckooAlarm Privacy Policy</a><a href="#walkmallow">Walkmallow Privacy Policy</a><a href={smoothcalc.privacyPolicyPath}>{smoothcalc.name} Privacy Policy</a><a href="#mochigoals">MochiGoals Privacy Policy</a></nav></section><article className="shell prose-page privacy-policy"><SharedPrivacy /><WalkmallowPrivacy /><MochiPrivacy /><p className="small-note" id="wm-pebbles">Existing installations: <a href="/apps/wm-pebbles/#privacy">WM Pebbles legacy privacy and support</a>.</p></article></>;
+  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · PRIVACY</span><h1>Privacy <em>Policy</em></h1><LegalDate date={walkmallowPolicyDate} /><p className="lead">Read how your app stores information and how to manage it.</p><nav className="legal-links" aria-label="App privacy policies"><a id="potatobeans" href="/apps/potatobeans/privacy/">PotatoBeans Privacy Policy</a><a id="my-stories" href="/apps/my-stories/privacy/">My Stories Privacy Policy</a><a href="/apps/cuckooalarm/privacy/">CuckooAlarm Privacy Policy</a><a href="#walkmallow">Walkmallow Privacy Policy</a><a href={smoothcalc.privacyPolicyPath}>{smoothcalc.name} Privacy Policy</a><a href="#mochigoals">MochiGoals Privacy Policy</a><a href={soapymoney.privacyPolicyPath}>{soapymoney.name} Privacy Policy</a></nav></section><article className="shell prose-page privacy-policy"><SharedPrivacy /><WalkmallowPrivacy /><MochiPrivacy /><p className="small-note" id="wm-pebbles">Existing installations: <a href="/apps/wm-pebbles/#privacy">WM Pebbles legacy privacy and support</a>.</p></article></>;
 }
 
 function NotFound() {
   return <section className="page-hero shell not-found"><span className="eyebrow">404 · PAGE NOT FOUND</span><h1>That page isn’t <em>here.</em></h1><p className="lead">The link may have moved, or the address may have a typo. Let’s get you back on track.</p><div className="actions"><ButtonLink href="/">Go home</ButtonLink><ButtonLink href="/support/" secondary>Visit support</ButtonLink></div></section>;
 }
 
-const pageContent: Record<Page, React.ComponentType> = { home: Home, pebbles: Pebbles, support: Support, contact: Contact, privacy: Privacy, terms: Terms, potato: PotatoProduct, stories: StoriesProduct, potatoPrivacy: PotatoPrivacyPage, storiesPrivacy: StoriesPrivacyPage, potatoTerms: PotatoTermsPage, storiesTerms: StoriesTermsPage, potatoSupport: PotatoSupportPage, storiesSupport: StoriesSupportPage, smoothcalc: SmoothCalcProduct, smoothcalcPrivacy: SmoothCalcPrivacy, smoothcalcTerms: SmoothCalcTerms, smoothcalcSupport: SmoothCalcSupport, mochi: MochiProduct, walkmallow: WalkmallowProduct, cuckoo: CuckooProduct, cuckooPrivacy: CuckooPrivacy, cuckooTerms: CuckooTerms, cuckooSupport: CuckooSupport, notFound: NotFound };
+const pageContent: Record<Page, React.ComponentType> = { home: Home, pebbles: Pebbles, support: Support, contact: Contact, privacy: Privacy, terms: Terms, potato: PotatoProduct, stories: StoriesProduct, potatoPrivacy: PotatoPrivacyPage, storiesPrivacy: StoriesPrivacyPage, potatoTerms: PotatoTermsPage, storiesTerms: StoriesTermsPage, potatoSupport: PotatoSupportPage, storiesSupport: StoriesSupportPage, smoothcalc: SmoothCalcProduct, smoothcalcPrivacy: SmoothCalcPrivacy, smoothcalcTerms: SmoothCalcTerms, smoothcalcSupport: SmoothCalcSupport, mochi: MochiProduct, soapymoney: SoapyMoneyProduct, soapymoneyPrivacy: SoapyMoneyPrivacy, soapymoneyTerms: SoapyMoneyTerms, soapymoneySupport: SoapyMoneySupport, walkmallow: WalkmallowProduct, cuckoo: CuckooProduct, cuckooPrivacy: CuckooPrivacy, cuckooTerms: CuckooTerms, cuckooSupport: CuckooSupport, notFound: NotFound };
 
 export function App({ path }: { path: string }) {
   const page = pageForPath(path);
