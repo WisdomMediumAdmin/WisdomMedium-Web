@@ -47,6 +47,14 @@ export const smoothcalc = {
   ]
 };
 
+export const mochigoals: AppInfo = {
+  slug: 'mochigoals', name: 'MochiGoals', platform: 'iPhone',
+  summary: 'Break a goal into subgoals and checklists, and see your progress as you go.',
+  description: 'Plan goals with notes, target dates and color tags. Keep your goal library on your iPhone and use it offline without an account.',
+  iconPath: '/images/apps/mochigoals-512.webp', privacyPolicyPath: '/privacy/#mochigoals',
+  storeName: 'the App Store for iPhone', release: { status: 'coming-soon' }
+};
+
 export const apps: AppInfo[] = [
   {
     slug: 'potatobeans', name: 'PotatoBeans', platform: 'iPhone, iPad and Mac',
@@ -70,7 +78,8 @@ export const apps: AppInfo[] = [
     iconPath: '/images/apps/cuckooalarm-512.webp'
   },
   walkmallow,
-  smoothcalc
+  smoothcalc,
+  mochigoals
 ];
 
 export const appPath = (app: AppInfo) => `/apps/${app.slug}/`;

@@ -86,5 +86,49 @@
         "rgba_sha256": "885b78dbaddf831c24af0c73dad362e10e019a09a71a93b50c31375dd8753730"
       }
     ]
+  },
+  {
+    "app": "mochigoals",
+    "repository": "WisdomMediumAdmin/MochiGoals",
+    "commit": "f1fe20a0e785bc27dc7efaddb7a028dac4c4a3fc",
+    "source": "Apple/iOS/App/Assets.xcassets/AppIcon.appiconset/Icon.png",
+    "source_sha256": "ebd809ed5ea8a174fcfce67c491a54c30093196e664507cc27025334f8a3308d",
+    "scheme": "MochiGoals",
+    "configuration": "Release",
+    "asset_catalog": "AppIcon",
+    "source_size": [
+      1024,
+      1024
+    ],
+    "variants": [
+      {
+        "path": "/images/apps/mochigoals-256.webp",
+        "width": 256,
+        "bytes": 29644,
+        "sha256": "94223821da6c66f276114069fdd4bb62f5094f71267f6483146f13663db87fea",
+        "rgba_sha256": "f4b22cb00f1e9713a5c6f440898a902723c40460f59f9efaabcee690a7de599a"
+      },
+      {
+        "path": "/images/apps/mochigoals-512.webp",
+        "width": 512,
+        "bytes": 104466,
+        "sha256": "dce768fdee4c1303e98f5db7233e09e6665b4424fdc02238d29f6958bf4277b6",
+        "rgba_sha256": "df4d810c6b7b02cfdcf434e2379f36e682e93b729282b4a92b8b45b3e6eb638a"
+      },
+      {
+        "path": "/images/apps/mochigoals-768.webp",
+        "width": 768,
+        "bytes": 245916,
+        "sha256": "ba6d57365009585874f7263a18b21a2f6ad786b05b364853c492ec55d346f2b0",
+        "rgba_sha256": "a9e3857d1ed5ea0634652e178df727c9ed7ba06b4af01943690597b07da2c8ab"
+      },
+      {
+        "path": "/images/apps/mochigoals-1024.webp",
+        "width": 1024,
+        "bytes": 390960,
+        "sha256": "f5c5630bdbfe67054a79dc675c725dc16ca1306f2f847b0daaecd17c9a5c29c8",
+        "rgba_sha256": "6d4f342805d9887f947b6e9b92e43edf1df3c31a56b232c765ed96372209d94b"
+      }
+    ]
   }
 ]
