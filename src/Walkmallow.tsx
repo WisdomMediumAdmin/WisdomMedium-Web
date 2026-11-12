@@ -34,7 +34,7 @@ export function WalkmallowProduct() {
       </div>
       <div className="product-icon-panel app-art--walkmallow"><AppIcon app={walkmallow} priority /></div>
     </section>
-    <section className="shell walkmallow-screens" aria-labelledby="walkmallow-screens-title">
+    <section className="shell app-screens" aria-labelledby="walkmallow-screens-title">
       <h2 id="walkmallow-screens-title">Inside Walkmallow</h2>
       <ul>
         {screenshots.map(([file, caption, alt]) => <li key={file}><figure>

@@ -36,6 +36,30 @@ describe('release legal and support destinations', () => {
       .toEqual(['/privacy/#walkmallow', '/terms/#walkmallow', '/support/#walkmallow']);
   });
 
+  it('publishes the iPhone-only calculator at its stable product and information URLs', () => {
+    for (const [directory, heading] of [
+      ['apps', 'SmoothCalc'], ['privacy', 'SmoothCalc Privacy Policy'],
+      ['terms', 'SmoothCalc Terms of Use'], ['support', 'SmoothCalc Support']
+    ]) {
+      const { container } = render(<App path={`/${directory}/smoothcalc/`} />);
+      expect(screen.getByRole('heading', { level: 1 }).textContent).toBe(heading);
+      const main = container.querySelector('main')!;
+      expect(main.textContent).toContain('iPhone');
+      expect(main.textContent).not.toMatch(/\b(iPad|Mac|macOS|Catalyst|watchOS|visionOS|Android)\b/i);
+      if (directory === 'apps') {
+        const status = screen.getByText('Coming soon on the App Store for iPhone');
+        expect(status.closest('a, button')).toBeNull();
+        expect(main.querySelector('a[href*="apps.apple.com"]')).toBeNull();
+        expect(main.querySelectorAll('figure img[alt]').length).toBe(3);
+      } else {
+        cleanup();
+        render(<App path={`/${directory}/`} />);
+        expect(document.querySelector(`a[href="/${directory}/smoothcalc/"]`)).not.toBeNull();
+      }
+      cleanup();
+    }
+  });
+
   it('keeps the shared website section short and preserves the legacy destination', () => {
     render(<App path="/privacy/" />);
     expect(screen.queryByText(/SoapyMoney/)).toBeNull();

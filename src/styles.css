@@ -998,21 +998,24 @@ button {
 .app-art--cuckooalarm { background: #f6dfbf; }
 
 .app-art--walkmallow { background: #eee8f6; }
-.walkmallow-screens { padding-bottom: 85px; }
-.walkmallow-screens h2 { font-size: 26px; letter-spacing: -.04em; }
-.walkmallow-screens ul {
+.app-screens { padding-bottom: 85px; }
+.app-screens h2 { font-size: 26px; letter-spacing: -.04em; }
+.app-screens ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
   gap: 24px 16px;
   padding: 0;
   list-style: none;
 }
-.walkmallow-screens figure { margin: 0; }
-.walkmallow-screens img {
+.app-screens figure { margin: 0; }
+.app-screens img {
   display: block;
   width: 100%;
   height: auto;
   border: 1px solid #e6e8e0;
   border-radius: 18px;
 }
-.walkmallow-screens figcaption { margin-top: 10px; font-weight: 700; }
+.app-screens figcaption { margin-top: 10px; font-weight: 700; }
+
+.app-art--smoothcalc { background: #e0eff9; }
+.app-card-top .status-pill { max-width: 100%; white-space: normal; }

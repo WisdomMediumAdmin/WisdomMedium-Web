@@ -1,6 +1,6 @@
 import { WalkmallowTerms, walkmallowPolicyDate } from './Walkmallow';
 import type { ReactNode } from 'react';
-import { emailHref, site } from './site';
+import { emailHref, site, smoothcalc } from './site';
 
 export const brandOperator = 'Kazi Ahmed Siam operates the WisdomMedium brand.';
 export const operatorDescription = 'Kazi Ahmed Siam operates PotatoBeans and My Stories under the WisdomMedium brand.';
@@ -83,7 +83,7 @@ export function StoriesTerms() {
 }
 
 export function Terms() {
-  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · TERMS</span><h1>Terms of Use</h1><LegalDate date={walkmallowPolicyDate} /><nav className="legal-links" aria-label="Terms sections"><a href="#general">General terms</a><a href="/apps/potatobeans/terms/">PotatoBeans</a><a href="/apps/my-stories/terms/">My Stories</a><a href="/apps/cuckooalarm/terms/">CuckooAlarm</a><a href="#walkmallow">Walkmallow</a></nav></section><article className="shell prose-page privacy-policy"><GeneralTerms /><PotatoTerms /><StoriesTerms /><WalkmallowTerms /></article></>;
+  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · TERMS</span><h1>Terms of Use</h1><LegalDate date={walkmallowPolicyDate} /><nav className="legal-links" aria-label="Terms sections"><a href="#general">General terms</a><a href="/apps/potatobeans/terms/">PotatoBeans</a><a href="/apps/my-stories/terms/">My Stories</a><a href="/apps/cuckooalarm/terms/">CuckooAlarm</a><a href="#walkmallow">Walkmallow</a><a href={smoothcalc.termsPath}>{smoothcalc.name}</a></nav></section><article className="shell prose-page privacy-policy"><GeneralTerms /><PotatoTerms /><StoriesTerms /><WalkmallowTerms /></article></>;
 }
 
 export function PotatoPrivacyPage() { return <LegalPage title="PotatoBeans Privacy Policy" slug="potatobeans" name="PotatoBeans"><PotatoPrivacy /><AppPrivacyContact /></LegalPage>; }

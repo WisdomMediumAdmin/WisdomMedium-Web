@@ -1,16 +1,16 @@
-import { site } from './site';
+import { appPath, site, smoothcalc } from './site';
 
-export type Page = 'home' | 'pebbles' | 'support' | 'contact' | 'privacy' | 'terms' | 'potato' | 'stories' | 'potatoPrivacy' | 'storiesPrivacy' | 'potatoTerms' | 'storiesTerms' | 'potatoSupport' | 'storiesSupport' | 'walkmallow' | 'cuckoo' | 'cuckooPrivacy' | 'cuckooTerms' | 'cuckooSupport' | 'notFound';
+export type Page = 'home' | 'pebbles' | 'support' | 'contact' | 'privacy' | 'terms' | 'potato' | 'stories' | 'potatoPrivacy' | 'storiesPrivacy' | 'potatoTerms' | 'storiesTerms' | 'potatoSupport' | 'storiesSupport' | 'smoothcalc' | 'smoothcalcPrivacy' | 'smoothcalcTerms' | 'smoothcalcSupport' | 'walkmallow' | 'cuckoo' | 'cuckooPrivacy' | 'cuckooTerms' | 'cuckooSupport' | 'notFound';
 
 export type PageInfo = { page: Page; path: string; title: string; description: string; legacy?: boolean; draft?: boolean };
 
 export const pages: PageInfo[] = [
   { page: 'home', path: '/', title: 'WisdomMedium | Thoughtful apps for everyday life', description: 'WisdomMedium makes thoughtful apps for everyday organization and productivity.' },
   { page: 'pebbles', path: '/apps/wm-pebbles/', title: 'WM Pebbles Legacy Privacy and Support | WisdomMedium', description: 'Privacy and support information for existing installations of the retired WM Pebbles app.', legacy: true },
-  { page: 'support', path: '/support/', title: 'Support | WisdomMedium', description: 'Get help with PotatoBeans, My Stories, CuckooAlarm and Walkmallow. Contact WisdomMedium support.' },
+  { page: 'support', path: '/support/', title: 'Support | WisdomMedium', description: `Get help with PotatoBeans, My Stories, CuckooAlarm, Walkmallow and ${smoothcalc.name}. Contact WisdomMedium support.` },
   { page: 'contact', path: '/contact/', title: 'Contact | WisdomMedium', description: 'Contact WisdomMedium for questions about our apps, support, or anything you would like to share.' },
-  { page: 'privacy', path: '/privacy/', title: 'Privacy Policy | WisdomMedium', description: 'App-specific privacy policies for PotatoBeans, My Stories, CuckooAlarm and Walkmallow, plus website and support privacy.' },
-  { page: 'terms', path: '/terms/', title: 'Terms of Use | WisdomMedium', description: 'General WisdomMedium terms and app-specific terms for PotatoBeans, My Stories, CuckooAlarm and Walkmallow.' },
+  { page: 'privacy', path: '/privacy/', title: 'Privacy Policy | WisdomMedium', description: `App-specific privacy policies for PotatoBeans, My Stories, CuckooAlarm, Walkmallow and ${smoothcalc.name}, plus website and support privacy.` },
+  { page: 'terms', path: '/terms/', title: 'Terms of Use | WisdomMedium', description: `General WisdomMedium terms and app-specific terms for PotatoBeans, My Stories, CuckooAlarm, Walkmallow and ${smoothcalc.name}.` },
   { page: 'potato', path: '/apps/potatobeans/', title: 'PotatoBeans | WisdomMedium', description: 'Create, modify and delete Beans and their tasks. Find app privacy, terms and support.' },
   { page: 'stories', path: '/apps/my-stories/', title: 'My Stories for iPhone | WisdomMedium', description: 'My Stories is a local iPhone journaling app. Find privacy, terms and support.' },
   { page: 'potatoPrivacy', path: '/apps/potatobeans/privacy/', title: 'PotatoBeans Privacy Policy | WisdomMedium', description: 'PotatoBeans local storage, optional iCloud, retained data and deletion.' },
@@ -19,6 +19,10 @@ export const pages: PageInfo[] = [
   { page: 'storiesTerms', path: '/apps/my-stories/terms/', title: 'My Stories Terms of Use | WisdomMedium', description: 'Terms for My Stories on iPhone, including app licensing, local journals, backups and protection limits.' },
   { page: 'potatoSupport', path: '/apps/potatobeans/support/', title: 'PotatoBeans Support | WisdomMedium', description: 'Contact PotatoBeans support for help with Beans, tasks, storage and optional iCloud.' },
   { page: 'storiesSupport', path: '/apps/my-stories/support/', title: 'My Stories Support | WisdomMedium', description: 'Contact My Stories support for help with journal imports, deletion, device backups and protected entries.' },
+  { page: 'smoothcalc', path: appPath(smoothcalc), title: `${smoothcalc.name} for iPhone | WisdomMedium`, description: smoothcalc.summary },
+  { page: 'smoothcalcPrivacy', path: smoothcalc.privacyPolicyPath, title: `${smoothcalc.name} Privacy Policy | WisdomMedium`, description: `How ${smoothcalc.name} handles local calculations, history, graphs, preferences, backups and deletion on iPhone.` },
+  { page: 'smoothcalcTerms', path: smoothcalc.termsPath, title: `${smoothcalc.name} Terms of Use | WisdomMedium`, description: `Terms for using ${smoothcalc.name} on iPhone, including calculation accuracy, graph estimates and your App Store license.` },
+  { page: 'smoothcalcSupport', path: smoothcalc.supportPath, title: `${smoothcalc.name} Support | WisdomMedium`, description: `Get help with ${smoothcalc.name} calculator modes, angle units, history, storage and reset on iPhone.` },
   { page: 'walkmallow', path: '/apps/walkmallow/', title: 'Walkmallow for iPhone | WisdomMedium', description: 'Track daily steps, choose an animated companion and explore illustrated New York City walks. Find Walkmallow privacy, terms and support.' },
   { page: 'cuckoo', path: '/apps/cuckooalarm/', title: 'CuckooAlarm for iPhone | WisdomMedium', description: 'Coming soon: local alarms, stopwatch, timer and optional Apple Weather forecasts for iPhone.' },
   { page: 'cuckooPrivacy', path: '/apps/cuckooalarm/privacy/', title: 'CuckooAlarm Privacy Policy | WisdomMedium', description: 'Local timing data, optional location, Apple Weather, retention and deletion.' },

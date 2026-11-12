@@ -5,9 +5,9 @@ export function ButtonLink({ href, children, secondary = false }: { href: string
   return <a className={`button ${secondary ? 'button-secondary' : 'button-primary'}`} href={href}>{children}<span aria-hidden="true">↗</span></a>;
 }
 
-export function ReleaseAction({ app, comingSoonLabel = 'Coming soon' }: { app: AppInfo; comingSoonLabel?: string }) {
+export function ReleaseAction({ app, comingSoonLabel }: { app: AppInfo; comingSoonLabel?: string }) {
   if (app.release.status === 'available') {
-    return <ButtonLink href={app.release.appStoreUrl}>View on the App Store</ButtonLink>;
+    return <ButtonLink href={app.release.appStoreUrl}>View on {app.storeName ?? 'the App Store'}</ButtonLink>;
   }
-  return <span className="status-pill">{comingSoonLabel}</span>;
+  return <span className="status-pill">{comingSoonLabel ?? (app.storeName ? `Coming soon on ${app.storeName}` : 'Coming soon')}</span>;
 }
