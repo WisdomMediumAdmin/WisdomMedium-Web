@@ -19,19 +19,29 @@ describe('release legal and support destinations', () => {
     }
   });
 
-  it.each(['/privacy/', '/terms/'])('covers both apps at the exact existing native-app destination %s', path => {
+  it.each(['/privacy/', '/terms/'])('covers the listed apps at the exact existing native-app destination %s', path => {
     render(<App path={path} />);
-    for (const id of ['potatobeans', 'my-stories']) expect(document.getElementById(id)).not.toBeNull();
-    expect(screen.getByText('November 7, 2026').getAttribute('datetime')).toBe('2026-11-07');
-    expect(screen.getByText(/Kazi Ahmed Siam operates PotatoBeans and My Stories/)).toBeTruthy();
+    for (const id of ['potatobeans', 'my-stories', 'walkmallow']) expect(document.getElementById(id)).not.toBeNull();
+    expect(screen.getByText('November 11, 2026').getAttribute('datetime')).toBe('2026-11-11');
+    expect(screen.getByText(/Kazi Ahmed Siam operates the WisdomMedium brand/)).toBeTruthy();
   });
 
-  it('keeps the shared policy short and preserves the legacy destination', () => {
+  it('links Walkmallow’s coming-soon product to the three native-app destinations', () => {
+    render(<App path="/apps/walkmallow/" />);
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Walkmallow');
+    expect(screen.getByText('Coming soon on the App Store').closest('a, button')).toBeNull();
+    expect(document.querySelector('a[href*="apps.apple.com"]')).toBeNull();
+    const info = screen.getByRole('navigation', { name: 'Walkmallow information' });
+    expect([...info.querySelectorAll('a')].map(link => link.getAttribute('href')))
+      .toEqual(['/privacy/#walkmallow', '/terms/#walkmallow', '/support/#walkmallow']);
+  });
+
+  it('keeps the shared website section short and preserves the legacy destination', () => {
     render(<App path="/privacy/" />);
     expect(screen.queryByText(/SoapyMoney/)).toBeNull();
     expect(document.getElementById('wm-pebbles')).not.toBeNull();
     expect(screen.getByRole('link', { name: 'WM Pebbles legacy privacy and support' }).getAttribute('href')).toBe('/apps/wm-pebbles/#privacy');
-    expect(document.querySelector('main')!.textContent!.split(/\s+/).length).toBeLessThan(450);
+    expect(document.getElementById('website-and-support')!.textContent!.split(/\s+/).length).toBeLessThan(450);
     cleanup();
     render(<App path="/apps/wm-pebbles/" />);
     expect(screen.getByText(/is being retired/)).toBeTruthy();

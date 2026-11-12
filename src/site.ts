@@ -20,6 +20,14 @@ export type AppInfo = {
   iconPath: string;
 };
 
+export const walkmallow: AppInfo = {
+  slug: 'walkmallow', name: 'Walkmallow', platform: 'iPhone',
+  summary: 'Track daily steps with ten animated companions and illustrated walks through New York City.',
+  description: 'Make everyday movement a little more cheerful. Walkmallow pairs simple step tracking with ten animated companions and illustrated virtual journeys through Brooklyn Bridge, Central Park and SoHo. Choose Indoor, Treadmill or Outdoor mode, carry your iPhone, and follow your progress one walk at a time.',
+  release: { status: 'coming-soon' }, privacyPolicyPath: '/privacy/#walkmallow',
+  iconPath: '/images/apps/walkmallow-512.webp'
+};
+
 export const apps: AppInfo[] = [
   {
     slug: 'potatobeans', name: 'PotatoBeans', platform: 'iPhone, iPad and Mac',
@@ -41,7 +49,8 @@ export const apps: AppInfo[] = [
     description: 'Local alarms, original sounds and optional Apple Weather forecasts.',
     release: { status: 'coming-soon' }, privacyPolicyPath: '/apps/cuckooalarm/privacy/',
     iconPath: '/images/apps/cuckooalarm-512.webp'
-  }
+  },
+  walkmallow
 ];
 
 export const appPath = (app: AppInfo) => `/apps/${app.slug}/`;

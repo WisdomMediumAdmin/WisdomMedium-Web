@@ -1,10 +1,13 @@
+import { WalkmallowTerms, walkmallowPolicyDate } from './Walkmallow';
 import type { ReactNode } from 'react';
 import { emailHref, site } from './site';
 
+export const brandOperator = 'Kazi Ahmed Siam operates the WisdomMedium brand.';
 export const operatorDescription = 'Kazi Ahmed Siam operates PotatoBeans and My Stories under the WisdomMedium brand.';
 
-export function LegalDate() {
-  return <p className="privacy-date">Last updated: <time dateTime="2026-11-07">November 7, 2026</time></p>;
+export function LegalDate({ date = '2026-11-07' }: { date?: string }) {
+  const label = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(date));
+  return <p className="privacy-date">Last updated: <time dateTime={date}>{label}</time></p>;
 }
 
 export function AppLinks({ slug, name }: { slug: string; name: string }) {
@@ -19,7 +22,7 @@ export function LegalPage({ title, slug, name, children }: { title: string; slug
 
 export function SharedPrivacy() {
   return <section id="website-and-support"><h2>Website and support privacy</h2>
-    <p>{operatorDescription} In these policies, “we” means Kazi Ahmed Siam.</p>
+    <p>{brandOperator} In these policies, “we” means Kazi Ahmed Siam.</p>
     <h3>This website</h3>
     <p>This is an informational website with no accounts, sign-in or online storage for your app content. We do not add advertising, analytics, tracking scripts or cookies. Our host, GitHub Pages, records visitors’ IP addresses for security under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s privacy policy</a>. Links to other websites are subject to those sites’ privacy practices.</p>
     <h3>When you contact us</h3>
@@ -63,7 +66,7 @@ export function StoriesPrivacy() {
 }
 
 export function GeneralTerms() {
-  return <section id="general"><h2>Using WisdomMedium</h2><p>{operatorDescription} These terms cover this website and supplement the applicable license for our apps.</p>
+  return <section id="general"><h2>Using WisdomMedium</h2><p>{brandOperator} These terms cover this website and supplement the applicable license for our apps.</p>
     <h3>License and acceptable use</h3><p>App Store apps are licensed under the agreement shown for that app. Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard End User License Agreement</a> applies when no custom license is provided. These website terms do not replace it. Prices and purchase terms are shown in the App Store.</p>
     <p>Use the apps and website lawfully. Do not interfere with their security or infringe anyone’s rights. You retain ownership of your content and must have permission to use anything you import or share. These terms do not give us ownership of, or permission to publish, your content.</p>
     <h3>Availability and responsibility</h3><p>To the extent permitted by law, the website is provided as available, without warranties of uninterrupted or error-free service. App warranties and liability are governed by the applicable app license. We do not guarantee successful synchronization, backup or recovery. Keep appropriate copies of important information and read your app’s storage and recovery limitations.</p><p>Nothing here excludes liability or consumer rights that cannot lawfully be excluded, or reduces protections under the applicable app license.</p>
@@ -80,7 +83,7 @@ export function StoriesTerms() {
 }
 
 export function Terms() {
-  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · TERMS</span><h1>Terms of Use</h1><LegalDate /><nav className="legal-links" aria-label="Terms sections"><a href="#general">General terms</a><a href="/apps/potatobeans/terms/">PotatoBeans</a><a href="/apps/my-stories/terms/">My Stories</a><a href="/apps/cuckooalarm/terms/">CuckooAlarm</a></nav></section><article className="shell prose-page privacy-policy"><GeneralTerms /><PotatoTerms /><StoriesTerms /></article></>;
+  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · TERMS</span><h1>Terms of Use</h1><LegalDate date={walkmallowPolicyDate} /><nav className="legal-links" aria-label="Terms sections"><a href="#general">General terms</a><a href="/apps/potatobeans/terms/">PotatoBeans</a><a href="/apps/my-stories/terms/">My Stories</a><a href="/apps/cuckooalarm/terms/">CuckooAlarm</a><a href="#walkmallow">Walkmallow</a></nav></section><article className="shell prose-page privacy-policy"><GeneralTerms /><PotatoTerms /><StoriesTerms /><WalkmallowTerms /></article></>;
 }
 
 export function PotatoPrivacyPage() { return <LegalPage title="PotatoBeans Privacy Policy" slug="potatobeans" name="PotatoBeans"><PotatoPrivacy /><AppPrivacyContact /></LegalPage>; }

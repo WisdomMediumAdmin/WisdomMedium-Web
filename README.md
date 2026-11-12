@@ -18,6 +18,8 @@ The public app and support website for WisdomMedium. It is built with React, Typ
 | `/apps/my-stories/{privacy,terms,support}/` | Dedicated My Stories pages |
 | `/apps/cuckooalarm/` | CuckooAlarm product page |
 | `/apps/cuckooalarm/{privacy,terms,support}/` | Published CuckooAlarm policy and support pages |
+| `/apps/walkmallow/` | Walkmallow for iPhone, with its release screenshots |
+| `/privacy/#walkmallow`, `/terms/#walkmallow`, `/support/#walkmallow` | Walkmallow sections on the pages linked by the app |
 | `/404.html` | Not-found page |
 
 The public support address is `support@wisdommedium.com`.

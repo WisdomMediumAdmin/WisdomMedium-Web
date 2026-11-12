@@ -41,3 +41,13 @@ lavender panels belong to the website, not to the icon files.
 To verify a deployed file, download its exact path from `app-icons.json`, compare
 its SHA-256 with the manifest, then decode and compare with the pinned PNG (or
 its Lanczos resize). Do not use an unrelated development checkout as the source.
+
+## Walkmallow
+
+The three Walkmallow icon sizes use the default Lavender artwork from
+`Apple/iOS/Resources/Assets.xcassets/AppIcon.appiconset/icon.png` in
+`WisdomMediumAdmin/Walkmallow` at `442352137328a2230a8aaf8fbd630e228ba6df83`.
+The lossless WebP files preserve the source ICC profile and match the RGBA pixels
+of the Lanczos resizes. The five product screenshots are 660 × 1434 WebP
+derivatives of the November 10 release package. Each original PNG matched
+the SHA-256 in the app team's screenshot manifest before conversion.

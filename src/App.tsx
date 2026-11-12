@@ -1,5 +1,8 @@
+import { ButtonLink, ReleaseAction } from './ReleaseAction';
+import { WalkmallowProduct, WalkmallowPrivacy, WalkmallowSupport, walkmallowPolicyDate } from './Walkmallow';
+export { ReleaseAction } from './ReleaseAction';
 import { CuckooProduct, CuckooPrivacy, CuckooTerms, CuckooSupport } from './CuckooAlarm';
-import { LegalDate, operatorDescription, SharedPrivacy, Terms, PotatoPrivacyPage, StoriesPrivacyPage, PotatoTermsPage, StoriesTermsPage } from './AppLegal';
+import { LegalDate, brandOperator, SharedPrivacy, Terms, PotatoPrivacyPage, StoriesPrivacyPage, PotatoTermsPage, StoriesTermsPage } from './AppLegal';
 import { PotatoProduct, StoriesProduct, PotatoSupportPage, StoriesSupportPage } from './ReleaseApps';
 import { useState } from 'react';
 import { appPath, apps, emailHref, site, type AppInfo } from './site';
@@ -26,19 +29,8 @@ function Footer() {
   </div></footer>;
 }
 
-function ButtonLink({ href, children, secondary = false }: { href: string; children: React.ReactNode; secondary?: boolean }) {
-  return <a className={`button ${secondary ? 'button-secondary' : 'button-primary'}`} href={href}>{children}<span aria-hidden="true">↗</span></a>;
-}
-
 export function SectionHeading({ eyebrow, title, children }: { eyebrow: string; title: string; children?: React.ReactNode }) {
   return <div className="section-heading"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{children && <p>{children}</p>}</div>;
-}
-
-export function ReleaseAction({ app }: { app: AppInfo }) {
-  if (app.release.status === 'available') {
-    return <ButtonLink href={app.release.appStoreUrl}>View on the App Store</ButtonLink>;
-  }
-  return <span className="status-pill">Coming soon</span>;
 }
 
 function AppCard({ app }: { app: AppInfo }) {
@@ -82,9 +74,10 @@ export function CopyEmailButton({ email }: { email: string }) {
 
 function Support() {
   return <>
-    <section className="page-hero shell support-hero"><div><span className="eyebrow">WISDOMMEDIUM · APP SUPPORT</span><h1>How can we <em>help?</em></h1><p className="lead">Need help with PotatoBeans, My Stories or CuckooAlarm, found a bug, or have an idea to share? Contact us and include a few details so we can understand the issue.</p></div></section>
+    <section className="page-hero shell support-hero"><div><span className="eyebrow">WISDOMMEDIUM · APP SUPPORT</span><h1>How can we <em>help?</em></h1><p className="lead">Need help with PotatoBeans, My Stories, CuckooAlarm or Walkmallow, found a bug, or have an idea to share? Contact us and include a few details so we can understand the issue.</p></div></section>
     <section className="shell support-main"><div className="support-contact"><span className="eyebrow">EMAIL SUPPORT</span><p>Support and privacy contact for Kazi Ahmed Siam, operating as WisdomMedium.</p><h2>Let’s figure it out together.</h2><p className="email-display">{site.email}</p><div className="actions"><ButtonLink href={emailHref(site.email, 'WisdomMedium App Support')}>Email support</ButtonLink><CopyEmailButton email={site.email} /></div><p className="small-note">Email opens in your mail app. You can also copy the address and write from any email service.</p></div><div className="support-tips"><h2>What to include</h2><p>A few details help us understand what happened:</p><ul><li>The app name and version</li><li>Your device model and iOS, iPadOS or macOS version</li><li>What you expected and what happened instead</li></ul><p>Screenshots are optional. Please remove sensitive information before sending them. Do not send passwords, payment information, or private notes.</p></div></section>
-    <div className="shell prose-page"><nav className="legal-links" aria-label="App support pages"><a id="potatobeans" href="/apps/potatobeans/support/">PotatoBeans support page</a><a id="my-stories" href="/apps/my-stories/support/">My Stories support page</a><a href="/apps/cuckooalarm/support/">CuckooAlarm support page</a></nav><p className="small-note" id="wm-pebbles">For a retired installation, visit <a href="/apps/wm-pebbles/#support">legacy WM Pebbles support</a>.</p></div>
+    <div className="shell prose-page"><nav className="legal-links" aria-label="App support pages"><a id="potatobeans" href="/apps/potatobeans/support/">PotatoBeans support page</a><a id="my-stories" href="/apps/my-stories/support/">My Stories support page</a><a href="/apps/cuckooalarm/support/">CuckooAlarm support page</a><a href="#walkmallow">Walkmallow support</a></nav>
+      <WalkmallowSupport /><p className="small-note" id="wm-pebbles">For a retired installation, visit <a href="/apps/wm-pebbles/#support">legacy WM Pebbles support</a>.</p></div>
     <section className="section support-topics"><div className="shell topic-grid"><article><span className="topic-number">01</span><h2>Found a bug?</h2><p>Tell us what happened and, if you can, the steps that led to it. We’ll use those details to investigate.</p><a className="text-link" href={emailHref(site.email, 'WisdomMedium Bug Report')}>Report a bug <span aria-hidden="true">↗</span></a></article><article><span className="topic-number">02</span><h2>Have an idea?</h2><p>We welcome thoughtful suggestions. Tell us what you’d like to do and how it would help.</p><a className="text-link" href={emailHref(site.email, 'WisdomMedium Feature Suggestion')}>Suggest a feature <span aria-hidden="true">↗</span></a></article></div></section>
   </>;
 }
@@ -94,7 +87,7 @@ function Contact() {
   return <>
     <section className="page-hero shell"><span className="eyebrow">CONTACT WISDOMMEDIUM</span><h1>Get in <em>touch.</em></h1><p className="lead">Questions about WisdomMedium, need help with one of our apps, or have something you’d like to share? We’d be happy to hear from you.</p></section>
     <section className="shell contact-section" aria-label="Email WisdomMedium"><div className="contact-panel">
-      <span className="eyebrow">ONE PLACE TO REACH US</span><p>{operatorDescription}</p>
+      <span className="eyebrow">ONE PLACE TO REACH US</span><p>{brandOperator}</p>
       <a className="contact-email" href={href}>{site.email}</a>
       <div className="actions"><ButtonLink href={href}>Email us</ButtonLink></div>
     </div></section>
@@ -102,14 +95,14 @@ function Contact() {
 }
 
 function Privacy() {
-  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · PRIVACY</span><h1>Privacy <em>Policy</em></h1><LegalDate /><p className="lead">Read how your app stores information and how to manage it.</p><nav className="legal-links" aria-label="App privacy policies"><a id="potatobeans" href="/apps/potatobeans/privacy/">PotatoBeans Privacy Policy</a><a id="my-stories" href="/apps/my-stories/privacy/">My Stories Privacy Policy</a><a href="/apps/cuckooalarm/privacy/">CuckooAlarm Privacy Policy</a></nav></section><article className="shell prose-page privacy-policy"><SharedPrivacy /><p className="small-note" id="wm-pebbles">Existing installations: <a href="/apps/wm-pebbles/#privacy">WM Pebbles legacy privacy and support</a>.</p></article></>;
+  return <><section className="page-hero shell privacy-hero"><span className="eyebrow">WISDOMMEDIUM · PRIVACY</span><h1>Privacy <em>Policy</em></h1><LegalDate date={walkmallowPolicyDate} /><p className="lead">Read how your app stores information and how to manage it.</p><nav className="legal-links" aria-label="App privacy policies"><a id="potatobeans" href="/apps/potatobeans/privacy/">PotatoBeans Privacy Policy</a><a id="my-stories" href="/apps/my-stories/privacy/">My Stories Privacy Policy</a><a href="/apps/cuckooalarm/privacy/">CuckooAlarm Privacy Policy</a><a href="#walkmallow">Walkmallow Privacy Policy</a></nav></section><article className="shell prose-page privacy-policy"><SharedPrivacy /><WalkmallowPrivacy /><p className="small-note" id="wm-pebbles">Existing installations: <a href="/apps/wm-pebbles/#privacy">WM Pebbles legacy privacy and support</a>.</p></article></>;
 }
 
 function NotFound() {
   return <section className="page-hero shell not-found"><span className="eyebrow">404 · PAGE NOT FOUND</span><h1>That page isn’t <em>here.</em></h1><p className="lead">The link may have moved, or the address may have a typo. Let’s get you back on track.</p><div className="actions"><ButtonLink href="/">Go home</ButtonLink><ButtonLink href="/support/" secondary>Visit support</ButtonLink></div></section>;
 }
 
-const pageContent: Record<Page, React.ComponentType> = { home: Home, pebbles: Pebbles, support: Support, contact: Contact, privacy: Privacy, terms: Terms, potato: PotatoProduct, stories: StoriesProduct, potatoPrivacy: PotatoPrivacyPage, storiesPrivacy: StoriesPrivacyPage, potatoTerms: PotatoTermsPage, storiesTerms: StoriesTermsPage, potatoSupport: PotatoSupportPage, storiesSupport: StoriesSupportPage, cuckoo: CuckooProduct, cuckooPrivacy: CuckooPrivacy, cuckooTerms: CuckooTerms, cuckooSupport: CuckooSupport, notFound: NotFound };
+const pageContent: Record<Page, React.ComponentType> = { home: Home, pebbles: Pebbles, support: Support, contact: Contact, privacy: Privacy, terms: Terms, potato: PotatoProduct, stories: StoriesProduct, potatoPrivacy: PotatoPrivacyPage, storiesPrivacy: StoriesPrivacyPage, potatoTerms: PotatoTermsPage, storiesTerms: StoriesTermsPage, potatoSupport: PotatoSupportPage, storiesSupport: StoriesSupportPage, walkmallow: WalkmallowProduct, cuckoo: CuckooProduct, cuckooPrivacy: CuckooPrivacy, cuckooTerms: CuckooTerms, cuckooSupport: CuckooSupport, notFound: NotFound };
 
 export function App({ path }: { path: string }) {
   const page = pageForPath(path);
